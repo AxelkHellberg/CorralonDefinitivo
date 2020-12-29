@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RZOQ+lUYOb7H0Favz4B17cgJ9xLrJLI+lnUqLRKHCcB4WFYrb+CFvZdfJx8gsHeqTMdN/pbzaVjn0o8WLc0HKA==",
+  "dgSpecHash": "YQ+iLdPqgZBx5mzjVD/LzBbJjSCszpCTTPHWdclzkmRTBIEXrurKhsT13G2eQUXA+byJn2sxz4TZblCyCHK9AA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\axel\\source\\repos\\LoginLayered\\Domain\\Domain.vbproj",
+  "projectFilePath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\Domain\\Domain.vbproj",
   "expectedPackageFiles": [
     "C:\\Users\\axel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\axel\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

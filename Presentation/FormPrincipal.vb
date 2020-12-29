@@ -173,7 +173,7 @@ Public Class FormPrincipal
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        AbrirFormEnPanel(Of FormVenta)()
+        AbrirFormEnPanel(Of FormVentaActual)()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BotonCompra.Click
         AbrirFormEnPanel(Of FormCompra)()

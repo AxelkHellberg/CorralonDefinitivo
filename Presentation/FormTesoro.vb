@@ -116,11 +116,9 @@ Public Class FormTesoro
             connection.Open()
             Using command = New SqlCommand()
                 command.Connection = connection
-                command.CommandText = "SELECT efectivo FROM Tesoro WHERE sucursal='Peru'"
+                command.CommandText = "SELECT efectivo FROM Tesoro"
                 command.CommandType = CommandType.Text
                 TotalTotal.Text = FormatNumber(command.ExecuteScalar(), 0)
-                command.CommandText = "SELECT efectivo FROM Tesoro WHERE sucursal='Arieta'"
-                TotalTotalArieta.Text = FormatNumber(command.ExecuteScalar(), 0)
             End Using
         End Using
         Return True

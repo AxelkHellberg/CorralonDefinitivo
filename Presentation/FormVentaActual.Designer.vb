@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FormVenta
+Partial Class FormVentaActual
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -30,7 +30,6 @@ Partial Class FormVenta
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormVenta))
         Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -273,7 +272,7 @@ Partial Class FormVenta
         Me.BotonPresupuesto.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BotonPresupuesto.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BotonPresupuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonPresupuesto.Location = New System.Drawing.Point(763, 234)
+        Me.BotonPresupuesto.Location = New System.Drawing.Point(533, 68)
         Me.BotonPresupuesto.Name = "BotonPresupuesto"
         Me.BotonPresupuesto.Size = New System.Drawing.Size(140, 43)
         Me.BotonPresupuesto.TabIndex = 58
@@ -595,7 +594,7 @@ Partial Class FormVenta
         Me.BotonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BotonAgregar.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BotonAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BotonAgregar.Image = CType(resources.GetObject("BotonAgregar.Image"), System.Drawing.Image)
+        Me.BotonAgregar.Image = Global.Presentation.My.Resources.Resources.logout__1_1
         Me.BotonAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BotonAgregar.Location = New System.Drawing.Point(371, 67)
         Me.BotonAgregar.Name = "BotonAgregar"
@@ -777,7 +776,6 @@ Partial Class FormVenta
         '
         Me.BotonClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BotonClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BotonClose.Image = CType(resources.GetObject("BotonClose.Image"), System.Drawing.Image)
         Me.BotonClose.Location = New System.Drawing.Point(906, 10)
         Me.BotonClose.Name = "BotonClose"
         Me.BotonClose.Size = New System.Drawing.Size(18, 16)
@@ -792,14 +790,14 @@ Partial Class FormVenta
         '
         Me.ClienteTableAdapter.ClearBeforeFill = True
         '
-        'FormVenta
+        'FormVentaActual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(932, 628)
         Me.Controls.Add(Me.Total)
         Me.MinimumSize = New System.Drawing.Size(847, 514)
-        Me.Name = "FormVenta"
+        Me.Name = "FormVentaActual"
         Me.Text = "vImports System.Runtime.InteropServices"
         Me.Total.ResumeLayout(False)
         Me.Total.PerformLayout()
@@ -863,3 +861,4 @@ Partial Class FormVenta
     Public WithEvents ClienteAsignado As Label
     Friend WithEvents DataGridViewVendedores As DataGridView
 End Class
+

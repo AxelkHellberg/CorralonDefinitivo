@@ -874,11 +874,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\axel\\source\\repos\\LoginLayered\\DataAccess\\DataAccess.vbproj",
+      "projectUniqueName": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\DataAccess\\DataAccess.vbproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\axel\\source\\repos\\LoginLayered\\DataAccess\\DataAccess.vbproj",
+      "projectPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\DataAccess\\DataAccess.vbproj",
       "packagesPath": "C:\\Users\\axel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\axel\\source\\repos\\LoginLayered\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -898,8 +898,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\axel\\source\\repos\\LoginLayered\\CapaComun\\CapaComun.vbproj": {
-              "projectPath": "C:\\Users\\axel\\source\\repos\\LoginLayered\\CapaComun\\CapaComun.vbproj"
+            "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj": {
+              "projectPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj"
             }
           }
         }

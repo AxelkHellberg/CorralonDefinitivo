@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7Fo0QfQmmjaHiU/C0CImWISmxUSL3xVJ5E3RI1xIMgEvbCvmzkr1QHvC2vRMAqLU+xIk7ifFrPt38tsVsDEWdA==",
+  "dgSpecHash": "E7+pi7xWFOwUBnospDZLekkTSjY3X8rUd6soxnxT6ZeYHIKYhlxFa1fuxxkHxF6+KyhE8TEscU3RXn887UiUww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\axel\\source\\repos\\LoginLayered\\CapaComun\\CapaComun.vbproj",
+  "projectFilePath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj",
   "expectedPackageFiles": [
     "C:\\Users\\axel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\axel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

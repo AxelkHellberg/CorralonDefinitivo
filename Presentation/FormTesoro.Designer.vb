@@ -28,6 +28,7 @@ Partial Class FormTesoro
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTesoro))
         Me.PanelContenedor = New System.Windows.Forms.Panel()
+        Me.BotonRetiro = New System.Windows.Forms.Button()
         Me.TotalTotal = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Pagos = New System.Windows.Forms.Label()
@@ -41,9 +42,6 @@ Partial Class FormTesoro
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BotonClose = New System.Windows.Forms.PictureBox()
-        Me.BotonRetiro = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TotalTotalArieta = New System.Windows.Forms.Label()
         Me.PanelContenedor.SuspendLayout()
         CType(Me.DataGridViewPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBarraTitulo.SuspendLayout()
@@ -52,8 +50,6 @@ Partial Class FormTesoro
         '
         'PanelContenedor
         '
-        Me.PanelContenedor.Controls.Add(Me.TotalTotalArieta)
-        Me.PanelContenedor.Controls.Add(Me.Label4)
         Me.PanelContenedor.Controls.Add(Me.BotonRetiro)
         Me.PanelContenedor.Controls.Add(Me.TotalTotal)
         Me.PanelContenedor.Controls.Add(Me.Label2)
@@ -70,6 +66,24 @@ Partial Class FormTesoro
         Me.PanelContenedor.Name = "PanelContenedor"
         Me.PanelContenedor.Size = New System.Drawing.Size(766, 347)
         Me.PanelContenedor.TabIndex = 0
+        '
+        'BotonRetiro
+        '
+        Me.BotonRetiro.FlatAppearance.BorderSize = 0
+        Me.BotonRetiro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.BotonRetiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.BotonRetiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BotonRetiro.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BotonRetiro.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BotonRetiro.Image = Global.Presentation.My.Resources.Resources.payment1
+        Me.BotonRetiro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BotonRetiro.Location = New System.Drawing.Point(627, 301)
+        Me.BotonRetiro.Name = "BotonRetiro"
+        Me.BotonRetiro.Size = New System.Drawing.Size(105, 43)
+        Me.BotonRetiro.TabIndex = 84
+        Me.BotonRetiro.Text = "Retiro"
+        Me.BotonRetiro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BotonRetiro.UseVisualStyleBackColor = True
         '
         'TotalTotal
         '
@@ -262,46 +276,6 @@ Partial Class FormTesoro
         Me.BotonClose.TabIndex = 3
         Me.BotonClose.TabStop = False
         '
-        'BotonRetiro
-        '
-        Me.BotonRetiro.FlatAppearance.BorderSize = 0
-        Me.BotonRetiro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.BotonRetiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.BotonRetiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BotonRetiro.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BotonRetiro.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BotonRetiro.Image = Global.Presentation.My.Resources.Resources.payment1
-        Me.BotonRetiro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonRetiro.Location = New System.Drawing.Point(627, 301)
-        Me.BotonRetiro.Name = "BotonRetiro"
-        Me.BotonRetiro.Size = New System.Drawing.Size(105, 43)
-        Me.BotonRetiro.TabIndex = 84
-        Me.BotonRetiro.Text = "Retiro"
-        Me.BotonRetiro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BotonRetiro.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.Label4.Location = New System.Drawing.Point(75, 100)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(326, 40)
-        Me.Label4.TabIndex = 85
-        Me.Label4.Text = "TESORO ARIETA    $"
-        '
-        'TotalTotalArieta
-        '
-        Me.TotalTotalArieta.AutoSize = True
-        Me.TotalTotalArieta.Font = New System.Drawing.Font("Century Gothic", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.TotalTotalArieta.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.TotalTotalArieta.Location = New System.Drawing.Point(478, 100)
-        Me.TotalTotalArieta.Name = "TotalTotalArieta"
-        Me.TotalTotalArieta.Size = New System.Drawing.Size(84, 40)
-        Me.TotalTotalArieta.TabIndex = 86
-        Me.TotalTotalArieta.Text = "0.00"
-        '
         'FormTesoro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -336,6 +310,4 @@ Partial Class FormTesoro
     Friend WithEvents BotonClose As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents BotonRetiro As Button
-    Friend WithEvents TotalTotalArieta As Label
-    Friend WithEvents Label4 As Label
 End Class

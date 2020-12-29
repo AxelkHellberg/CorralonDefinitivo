@@ -7,7 +7,7 @@ Imports System.IO
 Imports CapaComun
 
 
-Public Class FormVenta
+Public Class FormVentaActual
 
 #Region "Inicializacion del FORM VENTA"
 
@@ -717,6 +717,8 @@ Public Class FormVenta
         End Try
 
     End Sub
+
+
 
 
 

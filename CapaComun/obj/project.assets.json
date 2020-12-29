@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\axel\\source\\repos\\LoginLayered\\CapaComun\\CapaComun.vbproj",
+      "projectUniqueName": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj",
       "projectName": "CapaComun",
-      "projectPath": "C:\\Users\\axel\\source\\repos\\LoginLayered\\CapaComun\\CapaComun.vbproj",
+      "projectPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj",
       "packagesPath": "C:\\Users\\axel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\axel\\source\\repos\\LoginLayered\\CapaComun\\obj\\",
+      "outputPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
