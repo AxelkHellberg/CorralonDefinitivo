@@ -12,8 +12,8 @@ Public Class UserModel
     Public Function InsertarProducto(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
         Return userDao.InsertarProducto(codigo, desc, cantP, cantA, costo, porcentaje, precio)
     End Function
-    Public Function AcumularProducto(codigo As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
-        Return userDao.AcumularProducto(codigo, cantP, cantA, costo, porcentaje, precio)
+    Public Function AcumularProducto(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
+        Return userDao.AcumularProducto(codigo, desc, cantP, cantA, costo, porcentaje, precio)
     End Function
     Public Function ComprarProductos(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
         Return userDao.ComprarProductosUserDao(codigo, desc, cantP, cantA, costo, porcentaje, precio)

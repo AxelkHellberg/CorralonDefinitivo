@@ -16,7 +16,7 @@ Public Class FormCompra
     Private connectionString As String
     Public Sub conectar()
         'connectionString = "Server=IGGI662\PRUEBA1; DataBase=VerdaderoBackupSanJusto; integrated security= true"
-        connectionString = "Server=45.169.100.7; DataBase=sanjusto_centro; User Id=sanjusto_sanjusto ; Password=sz2dKOe&Y9~J35"
+        connectionString = "Server=45.169.100.7; DataBase=sanjusto_corralon; User Id=sanjusto_sanjusto ; Password=sz2dKOe&Y9~J35"
     End Sub
     Public Function GetConnection() As SqlConnection
         conectar()
@@ -135,12 +135,11 @@ Public Class FormCompra
         If String.IsNullOrEmpty(TextCodigoBarra.Text) Or String.IsNullOrEmpty(TextCantPeru.Text) Or String.IsNullOrEmpty(TextCosto.Text) Or String.IsNullOrEmpty(TextPrecio.Text) Or String.IsNullOrEmpty(TextPorcentaje.Text) Then
             MessageBox.Show("Error en el relleno de campos.")
         Else
-            DataGridViewCompra.Rows.Add(TextCodigoBarra.Text.Trim(), TextDescripcion.Text.Trim(), TextCantPeru.Text.Trim(), TextCantArieta.Text.Trim(), TextCosto.Text.Trim(), TextPorcentaje.Text.Trim(), TextPrecio.Text.Trim())
+            DataGridViewCompra.Rows.Add(TextCodigoBarra.Text.Trim(), TextDescripcion.Text.Trim(), TextCantPeru.Text.Trim(), TextCosto.Text.Trim(), TextPorcentaje.Text.Trim(), TextPrecio.Text.Trim())
             DataGridViewCompra.ColumnHeadersVisible = True
             TextCodigoBarra.Clear()
             TextDescripcion.Clear()
             TextCantPeru.Clear()
-            TextCantArieta.Clear()
             TextCosto.Clear()
             TextPrecio.Clear()
             TextPorcentaje.Clear()
@@ -152,7 +151,6 @@ Public Class FormCompra
         Dim campo1 As String
         Dim campo2 As String
         Dim campo3 As String
-        Dim campo4 As String
         Dim campo5 As String
         Dim campo6 As String
         Dim campo7 As String
@@ -161,12 +159,11 @@ Public Class FormCompra
             campo1 = DataGridViewCompra.Rows(i).Cells(0).Value.ToString
             campo2 = DataGridViewCompra.Rows(i).Cells(1).Value.ToString
             campo3 = DataGridViewCompra.Rows(i).Cells(2).Value.ToString
-            campo4 = DataGridViewCompra.Rows(i).Cells(3).Value.ToString
-            campo5 = DataGridViewCompra.Rows(i).Cells(4).Value.ToString
-            campo6 = DataGridViewCompra.Rows(i).Cells(5).Value.ToString
-            campo7 = DataGridViewCompra.Rows(i).Cells(6).Value.ToString
+            campo5 = DataGridViewCompra.Rows(i).Cells(3).Value.ToString
+            campo6 = DataGridViewCompra.Rows(i).Cells(4).Value.ToString
+            campo7 = DataGridViewCompra.Rows(i).Cells(5).Value.ToString
 
-            Dim valid = userModel.ComprarProductos(campo1, campo2, campo3, campo4, campo5, campo6, campo7)
+            Dim valid = userModel.ComprarProductos(campo1, campo2, campo3, "0", campo5, campo6, campo7)
 
             If valid = False Then
                 MessageBox.Show("Error al acumular el producto" + vbNewLine + "Por favor, intente nuevamente.")
@@ -187,7 +184,7 @@ Public Class FormCompra
         TextCosto.Clear()
         TextPorcentaje.Clear()
         TextPrecio.Clear()
-        TextCantArieta.Clear()
+
     End Sub
 
 #Region "Boton cerrar"
@@ -246,7 +243,7 @@ Public Class FormCompra
     Private Sub TextCant_KeyDown(sender As Object, e As KeyEventArgs) Handles TextCantPeru.KeyDown
         Select Case e.KeyData
             Case Keys.Enter
-                TextCantArieta.Focus()
+                TextCosto.Focus()
                 e.SuppressKeyPress = True
         End Select
     End Sub
@@ -283,7 +280,7 @@ Public Class FormCompra
         End Select
     End Sub
 
-    Private Sub TextCantArieta_KeyDown(sender As Object, e As KeyEventArgs) Handles TextCantArieta.KeyDown
+    Private Sub TextCantArieta_KeyDown(sender As Object, e As KeyEventArgs)
         Select Case e.KeyData
             Case Keys.Enter
                 TextCosto.Focus()
@@ -303,12 +300,12 @@ Public Class FormCompra
         TextPrecio.Text = DataGridViewBusqueda.CurrentRow.Cells(3).Value.ToString()
     End Sub
     Private Sub DataGridViewCompra_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles DataGridViewCompra.RowsAdded
-        Dim precioTotal As Double = Sumar(Column4.Name, DataGridViewCompra, Column3.Name, Column7.Name)
+        Dim precioTotal As Double = Sumar(Column4.Name, DataGridViewCompra, Column3.Name, "0")
         TotalNum.Text = FormatNumber(precioTotal.ToString(), 2)
     End Sub
 
     Private Sub DataGridViewCompra_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles DataGridViewCompra.RowsRemoved
-        Dim precioTotal As Double = Sumar(Column4.Name, DataGridViewCompra, Column3.Name, Column7.Name)
+        Dim precioTotal As Double = Sumar(Column4.Name, DataGridViewCompra, Column3.Name, "0")
         TotalNum.Text = FormatNumber(precioTotal.ToString(), 2)
     End Sub
 
@@ -325,7 +322,7 @@ Public Class FormCompra
         ' recorrer las filas y obtener los items de la columna indicada en "nombre_Columna"  
         Try
             For i As Integer = 0 To Dgv.RowCount - 1
-                total = total + CDbl(Dgv.Item(nombre_Columna.ToLower, i).Value) * (CDbl(Dgv.Item(cantPeru.ToLower, i).Value) + CDbl(Dgv.Item(cantArieta.ToLower, i).Value))
+                total = total + CDbl(Dgv.Item(nombre_Columna.ToLower, i).Value) * CDbl(Dgv.Item(cantPeru.ToLower, i).Value)
             Next
 
         Catch ex As Exception

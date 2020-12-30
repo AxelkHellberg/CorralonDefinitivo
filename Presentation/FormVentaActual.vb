@@ -14,33 +14,6 @@ Public Class FormVentaActual
     Public Sub New()
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        Dim userModel As New UserModel()
-        Using connection = GetConnection()
-            connection.Open()
-            Using command = New SqlCommand()
-
-                command.Connection = connection
-                command.CommandText = "select nombre as Vendedor FROM Vendedor"
-                command.CommandType = CommandType.Text
-
-                Dim da2 As New SqlDataAdapter(command)
-                Dim tabla As New DataTable
-
-                If da2.Fill(tabla) <> 0 Then
-
-                    Dim db As New BindingSource
-                    db.DataSource = tabla
-                    DataGridViewVendedores.DataSource = db
-                    da2.Dispose()
-
-
-                Else
-                    DataGridViewVendedores.Columns.Clear()
-                    da2.Dispose()
-                End If
-
-            End Using
-        End Using
     End Sub
 #End Region
 
@@ -50,7 +23,7 @@ Public Class FormVentaActual
     Private connectionString As String
     Public Sub conectar()
         'connectionString = "Server=IGGI662\PRUEBA1; DataBase=VerdaderoBackupSanJusto; integrated security= true"
-        connectionString = "Server=45.169.100.7; DataBase=sanjusto_centro; User Id=sanjusto_sanjusto ; Password=sz2dKOe&Y9~J35"
+        connectionString = "Server=45.169.100.7; DataBase=sanjusto_corralon; User Id=sanjusto_sanjusto ; Password=sz2dKOe&Y9~J35"
     End Sub
     Public Function GetConnection() As SqlConnection
         conectar()
@@ -230,7 +203,7 @@ Public Class FormVentaActual
             If String.IsNullOrEmpty(TextAjuste.Text) Then
                 TextAjuste.Text = "0"
             End If
-            valid = userModel.VenderProductos(campo1, campo3, DataGridViewVendedores.CurrentRow.Cells(0).Value.ToString, codVenta)
+            valid = userModel.VenderProductos(campo1, campo3, "Venta normal", codVenta)
 
             If valid = False Then
                 MessageBox.Show("Error al vender el producto" + vbNewLine + "Por favor, intente nuevamente." + vbNewLine + "o llamar a Axel")
@@ -647,7 +620,7 @@ Public Class FormVentaActual
 
             cb.SetFontAndSize(fuente, 8)
             Dim thisDay As Date = Date.Today
-            cb.ShowTextAligned(100, "Vendedor: " & DataGridViewVendedores.CurrentRow.Cells(0).Value.ToString, 60, PageSize.LEGAL.Height - 154, 0)
+            cb.ShowTextAligned(100, "Vendedor: " & "PHB CORRALÓN", 60, PageSize.LEGAL.Height - 154, 0)
             cb.ShowTextAligned(100, "Fecha: " & thisDay.ToString("D"), 60, PageSize.LEGAL.Height - 169, 0)
             cb.SetFontAndSize(fuente, 12)
             cb.ShowTextAligned(100, "3 Cuotas de: " & cuota3.ToString() & "   6 Coutas de: " & cuota6.ToString() & "   12 Cuotas de: " & cuota12.ToString() & "    TOTAL: " & monto.ToString(), 60, PageSize.LEGAL.Height - 190, 0)

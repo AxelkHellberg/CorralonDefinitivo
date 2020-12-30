@@ -37,7 +37,7 @@ Public Class UserDao
             Using command = New SqlCommand()
 
                 command.Connection = connection
-                command.CommandText = "BEGIN Try BEGIN TRANSACTION INSERT INTO Producto VALUES (@cod,@desc,@costo,@precio,@cantP,@cantA,@porcentaje) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+                command.CommandText = "BEGIN Try BEGIN TRANSACTION INSERT INTO Producto VALUES (@cod,@desc,@costo,@precio,@cantP,0,@porcentaje) INSERT INTO Compra (codProd,descripcion,costo,cantidad,fecha) VALUES(@cod,@desc,@costo,@cantP,sanjusto_sanjusto.DevolverFecha()) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
                 command.Parameters.AddWithValue("@cod", codigo)
                 command.Parameters.AddWithValue("@desc", desc)
                 command.Parameters.AddWithValue("@cantP", cantP)
@@ -58,13 +58,14 @@ Public Class UserDao
 
     End Function
 
-    Public Function AcumularProducto(codigo As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
+    Public Function AcumularProducto(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
         Using connection = GetConnection()
             connection.Open()
             Using command = New SqlCommand()
                 command.Connection = connection
-                command.CommandText = "BEGIN Try BEGIN TRANSACTION UPDATE Producto SET stockPeru+=@cantP,stockArieta+=@cantA,costo=@costo,precio=@precio,porcentaje=@porcentaje WHERE codigo=@codigo COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+                command.CommandText = "BEGIN Try BEGIN TRANSACTION UPDATE Producto SET stockPeru+=@cantP,costo=@costo,precio=@precio,porcentaje=@porcentaje WHERE codigo=@codigo INSERT INTO Compra (codProd,descripcion,costo,cantidad,fecha) VALUES(@codigo,@desc,@costo,@cantP,sanjusto_sanjusto.DevolverFecha()) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
                 command.Parameters.AddWithValue("@codigo", codigo)
+                command.Parameters.AddWithValue("@desc", desc)
                 command.Parameters.AddWithValue("@cantP", cantP)
                 command.Parameters.AddWithValue("@cantA", cantA)
                 command.Parameters.AddWithValue("@costo", costo)
@@ -93,7 +94,7 @@ Public Class UserDao
                 rd = command.ExecuteReader()
                 If rd.HasRows Then
                     rd.Dispose()
-                    Return AcumularProducto(codigo, cantP, cantA, costo, porcentaje, precio)
+                    Return AcumularProducto(codigo, desc, cantP, cantA, costo, porcentaje, precio)
                 Else
                     Return InsertarProducto(codigo, desc, cantP, cantA, costo, porcentaje, precio)
                 End If
@@ -107,15 +108,12 @@ Public Class UserDao
             Using command = New SqlCommand()
                 command.Connection = connection
 
-                If sucursalPA = "Peru" Then
-                    command.CommandText = "BEGIN Try BEGIN TRANSACTION update Producto set stockPeru-=@cant WHERE codigo=@cod insert into Vende values(@codVenta,@cod,@vendedor,sanjusto_sanjusto.DevolverFecha(),@cant) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
-                Else
-                    command.CommandText = "BEGIN Try BEGIN TRANSACTION update Producto set stockArieta-=@cant WHERE codigo=@cod insert into Vende values(@codVenta,@cod,@vendedor,sanjusto_sanjusto.DevolverFecha(),@cant) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
-                End If
+                command.CommandText = "BEGIN Try BEGIN TRANSACTION update Producto set stockPeru-=@cant WHERE codigo=@cod insert into Vende values(@codVenta,@cod,'sin vendedor',sanjusto_sanjusto.DevolverFecha(),@cant) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+
+
                 command.Parameters.AddWithValue("@cod", codigo)
                 command.Parameters.AddWithValue("@cant", cant)
                 command.Parameters.AddWithValue("@codVenta", codVenta)
-                command.Parameters.AddWithValue("@vendedor", vendedor)
                 command.CommandType = CommandType.Text
                 Dim rd As SqlDataReader
                 rd = command.ExecuteReader()
