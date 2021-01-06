@@ -186,6 +186,12 @@
     <Compile Include="FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormProveedores.Designer.vb">
+      <DependentUpon>FormProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormVentaActual.Designer.vb">
       <DependentUpon>FormVentaActual.vb</DependentUpon>
     </Compile>
@@ -219,6 +225,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sanjusto_centroDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="sanjusto_corralonDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sanjusto_corralonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sanjusto_corralonDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sanjusto_corralonDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sanjusto_corralonDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sanjusto_corralonDataSet2.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\..\..\..\Desktop\ProyectoCentroComputacion\BackUp Proyecto\FormVenta.resx">
@@ -246,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProveedores.resx">
+      <DependentUpon>FormProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTesoro.resx">
       <DependentUpon>FormTesoro.vb</DependentUpon>
@@ -283,6 +307,39 @@
     </None>
     <None Include="sanjusto_centroDataSet.xss">
       <DependentUpon>sanjusto_centroDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sanjusto_corralonDataSet.xsc">
+      <DependentUpon>sanjusto_corralonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sanjusto_corralonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sanjusto_corralonDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sanjusto_corralonDataSet.xss">
+      <DependentUpon>sanjusto_corralonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sanjusto_corralonDataSet1.xsc">
+      <DependentUpon>sanjusto_corralonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sanjusto_corralonDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sanjusto_corralonDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sanjusto_corralonDataSet1.xss">
+      <DependentUpon>sanjusto_corralonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sanjusto_corralonDataSet2.xsc">
+      <DependentUpon>sanjusto_corralonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="sanjusto_corralonDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sanjusto_corralonDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sanjusto_corralonDataSet2.xss">
+      <DependentUpon>sanjusto_corralonDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -420,6 +477,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1458264592_laptop_computer_pc_device_notebook_netbook_internet_icon-icons.com_55334 %281%29.ico" />
+    <None Include="Resources\patient %281%291.png" />
     <None Include="Resources\phone-book %281%2911.png" />
     <None Include="Resources\Minimize2.png" />
     <None Include="Resources\user %281%29.png" />

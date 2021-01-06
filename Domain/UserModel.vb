@@ -15,9 +15,18 @@ Public Class UserModel
     Public Function AcumularProducto(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
         Return userDao.AcumularProducto(codigo, desc, cantP, cantA, costo, porcentaje, precio)
     End Function
-    Public Function ComprarProductos(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
-        Return userDao.ComprarProductosUserDao(codigo, desc, cantP, cantA, costo, porcentaje, precio)
+    Public Function ComprarProductos(codigo As String, desc As String, cantP As Integer, proveedor As String, costo As Single, porcentaje As Single, precio As Single) As Boolean
+        Return userDao.ComprarProductosUserDao(codigo, desc, cantP, proveedor, costo, porcentaje, precio)
     End Function
+    Public Function RestarDinero(totalCaja As Double, totalTesoro As Double, totalDeuda As Double, totalBanco As Double, proveedor As String) As Boolean
+        Return userDao.RestarDineroUserDao(totalCaja, totalTesoro, totalDeuda, totalBanco, proveedor)
+    End Function
+
+    Public Function PagarProveedor(totalCaja As Double, totalTesoro As Double, totalBanco As Double, total As Double, proveedor As String) As Boolean
+        Return userDao.PagarProveedorUserDao(totalCaja, totalTesoro, totalBanco, total, proveedor)
+    End Function
+
+
 
     Public Function VenderProductos(codigo As String, cant As Integer, vendedor As String, codVenta As Integer) As Boolean
         Return userDao.VenderProductosUserDao(codigo, cant, vendedor, codVenta)
@@ -64,6 +73,9 @@ Public Class UserModel
 
     Public Function agregarCliente(nombre As String) As Boolean
         Return userDao.agregarClienteUserDao(nombre)
+    End Function
+    Public Function agregarProveedor(nombre As String) As Boolean
+        Return userDao.agregarProveedorUserDao(nombre)
     End Function
 
     Public Function descontarSaldoCliente(total As Single, ajuste As Single, efectivo As Single, tarjeta As Single, interes As Single, nombre As String) As Integer

@@ -9,6 +9,7 @@ Public Class FormCompra
     Public Sub New()
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
+
     End Sub
 
 #Region "Coneccion a SQL"
@@ -68,7 +69,7 @@ Public Class FormCompra
 #End Region
 
 #Region "Botones"
-    Private Sub BotonExportarExcel_Click(sender As Object, e As EventArgs) Handles BotonExportarExcel.Click
+    Private Sub BotonExportarExcel_Click(sender As Object, e As EventArgs)
         llenarExcel(DataGridViewCompra)
     End Sub
 
@@ -154,26 +155,50 @@ Public Class FormCompra
         Dim campo5 As String
         Dim campo6 As String
         Dim campo7 As String
-        For i As Integer = 0 To DataGridViewCompra.Rows.Count - 1
-            Dim userModel As New UserModel()
-            campo1 = DataGridViewCompra.Rows(i).Cells(0).Value.ToString
-            campo2 = DataGridViewCompra.Rows(i).Cells(1).Value.ToString
-            campo3 = DataGridViewCompra.Rows(i).Cells(2).Value.ToString
-            campo5 = DataGridViewCompra.Rows(i).Cells(3).Value.ToString
-            campo6 = DataGridViewCompra.Rows(i).Cells(4).Value.ToString
-            campo7 = DataGridViewCompra.Rows(i).Cells(5).Value.ToString
+        Dim userModel As New UserModel()
 
-            Dim valid = userModel.ComprarProductos(campo1, campo2, campo3, "0", campo5, campo6, campo7)
+        Dim cajaDouble As Double
+        Dim tesoroDouble As Double
+        Dim deudaDouble As Double
+        Dim bancoDouble As Double
+        Dim totalDouble As Double
+
+        Double.TryParse(TextCaja.Text, cajaDouble)
+        Double.TryParse(TextTesoro.Text, tesoroDouble)
+        Double.TryParse(TextDeuda.Text, deudaDouble)
+        Double.TryParse(TextBanco.Text, bancoDouble)
+        Double.TryParse(TotalNum.Text, totalDouble)
+        Dim total As Double = cajaDouble + tesoroDouble + deudaDouble + bancoDouble
+        If total = totalDouble Then
+
+            For i As Integer = 0 To DataGridViewCompra.Rows.Count - 1
+                campo1 = DataGridViewCompra.Rows(i).Cells(0).Value.ToString
+                campo2 = DataGridViewCompra.Rows(i).Cells(1).Value.ToString
+                campo3 = DataGridViewCompra.Rows(i).Cells(2).Value.ToString
+                campo5 = DataGridViewCompra.Rows(i).Cells(3).Value.ToString
+                campo6 = DataGridViewCompra.Rows(i).Cells(4).Value.ToString
+                campo7 = DataGridViewCompra.Rows(i).Cells(5).Value.ToString
+
+
+                If userModel.ComprarProductos(campo1, campo2, campo3, ComboBoxProveedores.Text, campo5, campo6, campo7) = False Then
+                    MessageBox.Show("Error al acumular el producto" + vbNewLine + "Por favor, intente nuevamente.")
+                End If
+
+            Next
+            Dim valid = userModel.RestarDinero(TextCaja.Text, TextTesoro.Text, TextDeuda.Text, TextBanco.Text, ComboBoxProveedores.Text)
 
             If valid = False Then
-                MessageBox.Show("Error al acumular el producto" + vbNewLine + "Por favor, intente nuevamente.")
+                MessageBox.Show("Error al acumular el producto RESTAR" + vbNewLine + "Por favor, intente nuevamente.")
             End If
+            DataGridViewBusqueda.Columns.Clear()
+            DataGridViewCompra.Rows.Clear()
+            TextCodigoBarra.Focus()
+            DataGridViewCompra.ColumnHeadersVisible = False
+        Else
+            MessageBox.Show("Error los campos Caja,Tesoro,Deuda,Banco" + vbNewLine + "deben coinicidir con el TOTAL")
+        End If
 
-        Next
-        DataGridViewBusqueda.Columns.Clear()
-        DataGridViewCompra.Rows.Clear()
-        TextCodigoBarra.Focus()
-        DataGridViewCompra.ColumnHeadersVisible = False
+
     End Sub
 
     Private Sub BotonLimpiar_Click(sender As Object, e As EventArgs) Handles BotonLimpiar.Click
@@ -333,6 +358,27 @@ Public Class FormCompra
         Return total
 
     End Function
+
+    Private Sub FormCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'Sanjusto_corralonDataSet.Proveedor' Puede moverla o quitarla según sea necesario.
+        Me.ProveedorTableAdapter.Fill(Me.Sanjusto_corralonDataSet.Proveedor)
+
+    End Sub
+
+    Private Sub TotalNum_TextChanged(sender As Object, e As EventArgs) Handles TotalNum.TextChanged
+        TextCaja.Text = TotalNum.Text
+        TextTesoro.Text = "0"
+        TextDeuda.Text = "0"
+        TextBanco.Text = "0"
+    End Sub
+
+
+
+
+
+
+
+
 
 #End Region
 

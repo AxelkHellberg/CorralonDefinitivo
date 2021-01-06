@@ -22,26 +22,26 @@ Partial Class FormCliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCliente))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCliente))
         Me.PanelContenedor = New System.Windows.Forms.Panel()
-        Me.BotonAgregarCliente = New System.Windows.Forms.Button()
         Me.PanelBarraTitulo = New System.Windows.Forms.Panel()
         Me.Clientes = New System.Windows.Forms.Label()
-        Me.BotonClose = New System.Windows.Forms.PictureBox()
         Me.DataGridViewBusqueda = New System.Windows.Forms.DataGridView()
         Me.Busqueda = New System.Windows.Forms.Label()
         Me.TextCliente = New System.Windows.Forms.TextBox()
         Me.NombreCliente = New System.Windows.Forms.Label()
         Me.BotonLimpiar = New System.Windows.Forms.Button()
         Me.BotonBuscar = New System.Windows.Forms.Button()
+        Me.BotonAgregarCliente = New System.Windows.Forms.Button()
+        Me.BotonClose = New System.Windows.Forms.PictureBox()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelBarraTitulo.SuspendLayout()
-        CType(Me.BotonClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BotonClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelContenedor
@@ -60,24 +60,6 @@ Partial Class FormCliente
         Me.PanelContenedor.Name = "PanelContenedor"
         Me.PanelContenedor.Size = New System.Drawing.Size(583, 291)
         Me.PanelContenedor.TabIndex = 0
-        '
-        'BotonAgregarCliente
-        '
-        Me.BotonAgregarCliente.FlatAppearance.BorderSize = 0
-        Me.BotonAgregarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.BotonAgregarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.BotonAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BotonAgregarCliente.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BotonAgregarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BotonAgregarCliente.Image = CType(resources.GetObject("BotonAgregarCliente.Image"), System.Drawing.Image)
-        Me.BotonAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonAgregarCliente.Location = New System.Drawing.Point(249, 53)
-        Me.BotonAgregarCliente.Name = "BotonAgregarCliente"
-        Me.BotonAgregarCliente.Size = New System.Drawing.Size(142, 43)
-        Me.BotonAgregarCliente.TabIndex = 57
-        Me.BotonAgregarCliente.Text = "Agregar cliente"
-        Me.BotonAgregarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BotonAgregarCliente.UseVisualStyleBackColor = True
         '
         'PanelBarraTitulo
         '
@@ -100,18 +82,6 @@ Partial Class FormCliente
         Me.Clientes.Size = New System.Drawing.Size(98, 24)
         Me.Clientes.TabIndex = 76
         Me.Clientes.Text = "CLIENTES"
-        '
-        'BotonClose
-        '
-        Me.BotonClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BotonClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BotonClose.Image = CType(resources.GetObject("BotonClose.Image"), System.Drawing.Image)
-        Me.BotonClose.Location = New System.Drawing.Point(557, 10)
-        Me.BotonClose.Name = "BotonClose"
-        Me.BotonClose.Size = New System.Drawing.Size(18, 16)
-        Me.BotonClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BotonClose.TabIndex = 3
-        Me.BotonClose.TabStop = False
         '
         'DataGridViewBusqueda
         '
@@ -234,6 +204,36 @@ Partial Class FormCliente
         Me.BotonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BotonBuscar.UseVisualStyleBackColor = True
         '
+        'BotonAgregarCliente
+        '
+        Me.BotonAgregarCliente.FlatAppearance.BorderSize = 0
+        Me.BotonAgregarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.BotonAgregarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.BotonAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BotonAgregarCliente.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BotonAgregarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BotonAgregarCliente.Image = CType(resources.GetObject("BotonAgregarCliente.Image"), System.Drawing.Image)
+        Me.BotonAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BotonAgregarCliente.Location = New System.Drawing.Point(249, 53)
+        Me.BotonAgregarCliente.Name = "BotonAgregarCliente"
+        Me.BotonAgregarCliente.Size = New System.Drawing.Size(142, 43)
+        Me.BotonAgregarCliente.TabIndex = 57
+        Me.BotonAgregarCliente.Text = "Agregar cliente"
+        Me.BotonAgregarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BotonAgregarCliente.UseVisualStyleBackColor = True
+        '
+        'BotonClose
+        '
+        Me.BotonClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BotonClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BotonClose.Image = CType(resources.GetObject("BotonClose.Image"), System.Drawing.Image)
+        Me.BotonClose.Location = New System.Drawing.Point(557, 10)
+        Me.BotonClose.Name = "BotonClose"
+        Me.BotonClose.Size = New System.Drawing.Size(18, 16)
+        Me.BotonClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BotonClose.TabIndex = 3
+        Me.BotonClose.TabStop = False
+        '
         'FormCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -247,8 +247,8 @@ Partial Class FormCliente
         Me.PanelContenedor.PerformLayout()
         Me.PanelBarraTitulo.ResumeLayout(False)
         Me.PanelBarraTitulo.PerformLayout()
-        CType(Me.BotonClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BotonClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -22,6 +22,7 @@ Partial Class FormCompra
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -31,14 +32,31 @@ Partial Class FormCompra
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.panelContenedor = New System.Windows.Forms.Panel()
+        Me.TextBanco = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.ComboBoxProveedores = New System.Windows.Forms.ComboBox()
+        Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Sanjusto_corralonDataSet = New Presentation.sanjusto_corralonDataSet()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextDeuda = New System.Windows.Forms.TextBox()
+        Me.TextTesoro = New System.Windows.Forms.TextBox()
+        Me.TextCaja = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TotalNum = New System.Windows.Forms.Label()
         Me.BotonLimpiar = New System.Windows.Forms.Button()
-        Me.BotonExportarExcel = New System.Windows.Forms.Button()
         Me.BotonConfirmar = New System.Windows.Forms.Button()
         Me.Busqueda = New System.Windows.Forms.Label()
         Me.DetalleCompra = New System.Windows.Forms.Label()
         Me.DataGridViewCompra = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BotonAgregar = New System.Windows.Forms.Button()
         Me.DataGridViewBusqueda = New System.Windows.Forms.DataGridView()
         Me.Porcentaje = New System.Windows.Forms.Label()
@@ -58,13 +76,10 @@ Partial Class FormCompra
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.tabla = New System.Data.DataTable()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProveedorTableAdapter = New Presentation.sanjusto_corralonDataSetTableAdapters.ProveedorTableAdapter()
         Me.panelContenedor.SuspendLayout()
+        CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Sanjusto_corralonDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBarraTitulo.SuspendLayout()
@@ -75,10 +90,19 @@ Partial Class FormCompra
         'panelContenedor
         '
         Me.panelContenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.panelContenedor.Controls.Add(Me.TextBanco)
+        Me.panelContenedor.Controls.Add(Me.Label7)
+        Me.panelContenedor.Controls.Add(Me.Label6)
+        Me.panelContenedor.Controls.Add(Me.ComboBoxProveedores)
+        Me.panelContenedor.Controls.Add(Me.Label5)
+        Me.panelContenedor.Controls.Add(Me.Label4)
+        Me.panelContenedor.Controls.Add(Me.Label2)
+        Me.panelContenedor.Controls.Add(Me.TextDeuda)
+        Me.panelContenedor.Controls.Add(Me.TextTesoro)
+        Me.panelContenedor.Controls.Add(Me.TextCaja)
         Me.panelContenedor.Controls.Add(Me.Label1)
         Me.panelContenedor.Controls.Add(Me.TotalNum)
         Me.panelContenedor.Controls.Add(Me.BotonLimpiar)
-        Me.panelContenedor.Controls.Add(Me.BotonExportarExcel)
         Me.panelContenedor.Controls.Add(Me.BotonConfirmar)
         Me.panelContenedor.Controls.Add(Me.Busqueda)
         Me.panelContenedor.Controls.Add(Me.DetalleCompra)
@@ -105,23 +129,132 @@ Partial Class FormCompra
         Me.panelContenedor.Size = New System.Drawing.Size(756, 482)
         Me.panelContenedor.TabIndex = 0
         '
+        'TextBanco
+        '
+        Me.TextBanco.Location = New System.Drawing.Point(392, 449)
+        Me.TextBanco.Name = "TextBanco"
+        Me.TextBanco.Size = New System.Drawing.Size(45, 20)
+        Me.TextBanco.TabIndex = 54
+        Me.TextBanco.Text = "0"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.Label7.Location = New System.Drawing.Point(391, 431)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(46, 17)
+        Me.Label7.TabIndex = 53
+        Me.Label7.Text = "Banco"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.Label6.Location = New System.Drawing.Point(440, 429)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(71, 17)
+        Me.Label6.TabIndex = 52
+        Me.Label6.Text = "Proveedor"
+        '
+        'ComboBoxProveedores
+        '
+        Me.ComboBoxProveedores.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "nombre", True))
+        Me.ComboBoxProveedores.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.ProveedorBindingSource, "nombre", True))
+        Me.ComboBoxProveedores.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.ProveedorBindingSource, "nombre", True))
+        Me.ComboBoxProveedores.FormattingEnabled = True
+        Me.ComboBoxProveedores.Location = New System.Drawing.Point(443, 449)
+        Me.ComboBoxProveedores.Name = "ComboBoxProveedores"
+        Me.ComboBoxProveedores.Size = New System.Drawing.Size(136, 21)
+        Me.ComboBoxProveedores.TabIndex = 51
+        Me.ComboBoxProveedores.Text = "(seleccionar proveedor)"
+        '
+        'ProveedorBindingSource
+        '
+        Me.ProveedorBindingSource.DataMember = "Proveedor"
+        Me.ProveedorBindingSource.DataSource = Me.Sanjusto_corralonDataSet
+        '
+        'Sanjusto_corralonDataSet
+        '
+        Me.Sanjusto_corralonDataSet.DataSetName = "sanjusto_corralonDataSet"
+        Me.Sanjusto_corralonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.Label5.Location = New System.Drawing.Point(341, 431)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(48, 17)
+        Me.Label5.TabIndex = 50
+        Me.Label5.Text = "Deuda"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.Label4.Location = New System.Drawing.Point(289, 430)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(46, 17)
+        Me.Label4.TabIndex = 49
+        Me.Label4.Text = "Tesoro"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.Label2.Location = New System.Drawing.Point(238, 430)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(36, 17)
+        Me.Label2.TabIndex = 48
+        Me.Label2.Text = "Caja"
+        '
+        'TextDeuda
+        '
+        Me.TextDeuda.Location = New System.Drawing.Point(341, 449)
+        Me.TextDeuda.Name = "TextDeuda"
+        Me.TextDeuda.Size = New System.Drawing.Size(45, 20)
+        Me.TextDeuda.TabIndex = 47
+        Me.TextDeuda.Text = "0"
+        '
+        'TextTesoro
+        '
+        Me.TextTesoro.Location = New System.Drawing.Point(292, 450)
+        Me.TextTesoro.Name = "TextTesoro"
+        Me.TextTesoro.Size = New System.Drawing.Size(43, 20)
+        Me.TextTesoro.TabIndex = 46
+        Me.TextTesoro.Text = "0"
+        '
+        'TextCaja
+        '
+        Me.TextCaja.Location = New System.Drawing.Point(238, 450)
+        Me.TextCaja.Name = "TextCaja"
+        Me.TextCaja.Size = New System.Drawing.Size(48, 20)
+        Me.TextCaja.TabIndex = 45
+        Me.TextCaja.Text = "0"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.75!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.Label1.Location = New System.Drawing.Point(29, 436)
+        Me.Label1.Location = New System.Drawing.Point(20, 434)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(119, 34)
+        Me.Label1.Size = New System.Drawing.Size(31, 34)
         Me.Label1.TabIndex = 44
-        Me.Label1.Text = "TOTAL $"
+        Me.Label1.Text = "$"
         '
         'TotalNum
         '
         Me.TotalNum.AutoSize = True
         Me.TotalNum.Font = New System.Drawing.Font("Century Gothic", 20.75!)
         Me.TotalNum.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.TotalNum.Location = New System.Drawing.Point(195, 436)
+        Me.TotalNum.Location = New System.Drawing.Point(80, 436)
         Me.TotalNum.Name = "TotalNum"
         Me.TotalNum.Size = New System.Drawing.Size(70, 34)
         Me.TotalNum.TabIndex = 43
@@ -144,24 +277,6 @@ Partial Class FormCompra
         Me.BotonLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BotonLimpiar.UseVisualStyleBackColor = True
         '
-        'BotonExportarExcel
-        '
-        Me.BotonExportarExcel.FlatAppearance.BorderSize = 0
-        Me.BotonExportarExcel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.BotonExportarExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.BotonExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BotonExportarExcel.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BotonExportarExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BotonExportarExcel.Image = Global.Presentation.My.Resources.Resources.application_office_excel_2474
-        Me.BotonExportarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonExportarExcel.Location = New System.Drawing.Point(442, 427)
-        Me.BotonExportarExcel.Name = "BotonExportarExcel"
-        Me.BotonExportarExcel.Size = New System.Drawing.Size(127, 43)
-        Me.BotonExportarExcel.TabIndex = 32
-        Me.BotonExportarExcel.Text = "Exportar"
-        Me.BotonExportarExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BotonExportarExcel.UseVisualStyleBackColor = True
-        '
         'BotonConfirmar
         '
         Me.BotonConfirmar.FlatAppearance.BorderSize = 0
@@ -172,11 +287,11 @@ Partial Class FormCompra
         Me.BotonConfirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BotonConfirmar.Image = Global.Presentation.My.Resources.Resources.bluefilefolder_azul_archivo_12582__2_
         Me.BotonConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonConfirmar.Location = New System.Drawing.Point(591, 426)
+        Me.BotonConfirmar.Location = New System.Drawing.Point(604, 427)
         Me.BotonConfirmar.Name = "BotonConfirmar"
         Me.BotonConfirmar.Size = New System.Drawing.Size(127, 43)
         Me.BotonConfirmar.TabIndex = 31
-        Me.BotonConfirmar.Text = "Confirmar"
+        Me.BotonConfirmar.Text = "Comprar"
         Me.BotonConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BotonConfirmar.UseVisualStyleBackColor = True
         '
@@ -259,6 +374,36 @@ Partial Class FormCompra
         Me.DataGridViewCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewCompra.Size = New System.Drawing.Size(705, 132)
         Me.DataGridViewCompra.TabIndex = 28
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Codigo"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Descripcion"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "CantPeru"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Costo"
+        Me.Column4.Name = "Column4"
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Porcentaje"
+        Me.Column6.Name = "Column6"
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Precio"
+        Me.Column5.Name = "Column5"
         '
         'BotonAgregar
         '
@@ -495,35 +640,9 @@ Partial Class FormCompra
         Me.btnClose.TabIndex = 3
         Me.btnClose.TabStop = False
         '
-        'Column1
+        'ProveedorTableAdapter
         '
-        Me.Column1.HeaderText = "Codigo"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Descripcion"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "CantPeru"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Costo"
-        Me.Column4.Name = "Column4"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Porcentaje"
-        Me.Column6.Name = "Column6"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Precio"
-        Me.Column5.Name = "Column5"
+        Me.ProveedorTableAdapter.ClearBeforeFill = True
         '
         'FormCompra
         '
@@ -539,6 +658,8 @@ Partial Class FormCompra
         Me.Text = "Form2"
         Me.panelContenedor.ResumeLayout(False)
         Me.panelContenedor.PerformLayout()
+        CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Sanjusto_corralonDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewCompra, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBarraTitulo.ResumeLayout(False)
@@ -577,7 +698,6 @@ Partial Class FormCompra
     Friend WithEvents Busqueda As Label
     Friend WithEvents DetalleCompra As Label
     Friend WithEvents BotonConfirmar As Button
-    Friend WithEvents BotonExportarExcel As Button
     Friend WithEvents BotonLimpiar As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents TotalNum As Label
@@ -588,4 +708,17 @@ Partial Class FormCompra
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextDeuda As TextBox
+    Friend WithEvents TextTesoro As TextBox
+    Friend WithEvents TextCaja As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents ComboBoxProveedores As ComboBox
+    Friend WithEvents Sanjusto_corralonDataSet As sanjusto_corralonDataSet
+    Friend WithEvents ProveedorBindingSource As BindingSource
+    Friend WithEvents ProveedorTableAdapter As sanjusto_corralonDataSetTableAdapters.ProveedorTableAdapter
+    Friend WithEvents TextBanco As TextBox
+    Friend WithEvents Label7 As Label
 End Class

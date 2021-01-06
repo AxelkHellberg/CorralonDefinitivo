@@ -16,3 +16,12 @@ C:\Users\axel\Desktop\Proyectos\Corralon\CapaComun\obj\Debug\netstandard2.0\Capa
 C:\Users\axel\Desktop\Proyectos\Corralon\CapaComun\obj\Debug\netstandard2.0\CapaComun.vbproj.CoreCompileInputs.cache
 C:\Users\axel\Desktop\Proyectos\Corralon\CapaComun\obj\Debug\netstandard2.0\CapaComun.dll
 C:\Users\axel\Desktop\Proyectos\Corralon\CapaComun\obj\Debug\netstandard2.0\CapaComun.pdb
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\bin\Debug\netstandard2.0\CapaComun.deps.json
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\bin\Debug\netstandard2.0\CapaComun.dll
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\bin\Debug\netstandard2.0\CapaComun.pdb
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\obj\Debug\netstandard2.0\CapaComun.vbprojAssemblyReference.cache
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\obj\Debug\netstandard2.0\CapaComun.AssemblyInfoInputs.cache
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\obj\Debug\netstandard2.0\CapaComun.AssemblyInfo.vb
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\obj\Debug\netstandard2.0\CapaComun.vbproj.CoreCompileInputs.cache
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\obj\Debug\netstandard2.0\CapaComun.dll
+C:\Users\axel\Desktop\Proyectos\Corralon1\CapaComun\obj\Debug\netstandard2.0\CapaComun.pdb

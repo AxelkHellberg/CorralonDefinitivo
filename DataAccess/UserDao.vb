@@ -29,7 +29,7 @@ Public Class UserDao
         End Using
     End Function
 
-    Public Function InsertarProducto(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
+    Public Function InsertarProducto(codigo As String, desc As String, cantP As Integer, proveedor As String, costo As Single, porcentaje As Single, precio As Single) As Boolean
 
 
         Using connection = GetConnection()
@@ -37,11 +37,11 @@ Public Class UserDao
             Using command = New SqlCommand()
 
                 command.Connection = connection
-                command.CommandText = "BEGIN Try BEGIN TRANSACTION INSERT INTO Producto VALUES (@cod,@desc,@costo,@precio,@cantP,0,@porcentaje) INSERT INTO Compra (codProd,descripcion,costo,cantidad,fecha) VALUES(@cod,@desc,@costo,@cantP,sanjusto_sanjusto.DevolverFecha()) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+                command.CommandText = "BEGIN Try BEGIN TRANSACTION INSERT INTO Producto VALUES (@cod,@desc,@costo,@precio,@cantP,0,@porcentaje) INSERT INTO Compra (codProd,descripcion,costo,cantidad,fecha,proveedor) VALUES(@cod,@desc,@costo,@cantP,sanjusto_sanjusto.DevolverFecha(),@prove) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
                 command.Parameters.AddWithValue("@cod", codigo)
                 command.Parameters.AddWithValue("@desc", desc)
                 command.Parameters.AddWithValue("@cantP", cantP)
-                command.Parameters.AddWithValue("@cantA", cantA)
+                command.Parameters.AddWithValue("@prove", proveedor)
                 command.Parameters.AddWithValue("@costo", costo)
                 command.Parameters.AddWithValue("@porcentaje", porcentaje)
                 command.Parameters.AddWithValue("@precio", precio)
@@ -58,16 +58,16 @@ Public Class UserDao
 
     End Function
 
-    Public Function AcumularProducto(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
+    Public Function AcumularProducto(codigo As String, desc As String, cantP As Integer, proveedor As String, costo As Single, porcentaje As Single, precio As Single) As Boolean
         Using connection = GetConnection()
             connection.Open()
             Using command = New SqlCommand()
                 command.Connection = connection
-                command.CommandText = "BEGIN Try BEGIN TRANSACTION UPDATE Producto SET stockPeru+=@cantP,costo=@costo,precio=@precio,porcentaje=@porcentaje WHERE codigo=@codigo INSERT INTO Compra (codProd,descripcion,costo,cantidad,fecha) VALUES(@codigo,@desc,@costo,@cantP,sanjusto_sanjusto.DevolverFecha()) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+                command.CommandText = "BEGIN Try BEGIN TRANSACTION UPDATE Producto SET stockPeru+=@cantP,costo=@costo,precio=@precio,porcentaje=@porcentaje WHERE codigo=@codigo INSERT INTO Compra (codProd,descripcion,costo,cantidad,fecha,proveedor) VALUES(@codigo,@desc,@costo,@cantP,sanjusto_sanjusto.DevolverFecha(),@prove) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
                 command.Parameters.AddWithValue("@codigo", codigo)
                 command.Parameters.AddWithValue("@desc", desc)
                 command.Parameters.AddWithValue("@cantP", cantP)
-                command.Parameters.AddWithValue("@cantA", cantA)
+                command.Parameters.AddWithValue("@prove", proveedor)
                 command.Parameters.AddWithValue("@costo", costo)
                 command.Parameters.AddWithValue("@porcentaje", porcentaje)
                 command.Parameters.AddWithValue("@precio", precio)
@@ -82,7 +82,7 @@ Public Class UserDao
         End Using
     End Function
 
-    Public Function ComprarProductosUserDao(codigo As String, desc As String, cantP As Integer, cantA As Integer, costo As Single, porcentaje As Single, precio As Single) As Boolean
+    Public Function ComprarProductosUserDao(codigo As String, desc As String, cantP As Integer, proveedor As String, costo As Single, porcentaje As Single, precio As Single) As Boolean
         Using connection = GetConnection()
             connection.Open()
             Using command = New SqlCommand()
@@ -94,10 +94,54 @@ Public Class UserDao
                 rd = command.ExecuteReader()
                 If rd.HasRows Then
                     rd.Dispose()
-                    Return AcumularProducto(codigo, desc, cantP, cantA, costo, porcentaje, precio)
+                    Return AcumularProducto(codigo, desc, cantP, proveedor, costo, porcentaje, precio)
                 Else
-                    Return InsertarProducto(codigo, desc, cantP, cantA, costo, porcentaje, precio)
+                    Return InsertarProducto(codigo, desc, cantP, proveedor, costo, porcentaje, precio)
                 End If
+            End Using
+        End Using
+    End Function
+
+    Public Function RestarDineroUserDao(totalCaja As Double, totalTesoro As Double, totalDeuda As Double, totalBanco As Double, proveedor As String) As Boolean
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New SqlCommand()
+                command.Connection = connection
+                command.CommandText = "BEGIN Try BEGIN TRANSACTION UPDATE tesoro SET efectivo-=@tesoro WHERE sucursal=@sucu UPDATE caja SET efectivo-=@caja,total-=@caja WHERE sucursal=@sucu UPDATE proveedor SET deuda+=@deu WHERE nombre=@prove UPDATE banco SET dinero-=@banco COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+                command.Parameters.AddWithValue("@caja", totalCaja)
+                command.Parameters.AddWithValue("@tesoro", totalTesoro)
+                command.Parameters.AddWithValue("@deu", totalDeuda)
+                command.Parameters.AddWithValue("@sucu", sucursalPA)
+                command.Parameters.AddWithValue("@prove", proveedor)
+                command.Parameters.AddWithValue("@banco", totalBanco)
+                command.CommandType = CommandType.Text
+                Dim rd As SqlDataReader
+                rd = command.ExecuteReader()
+                rd.Dispose()
+                Return True
+
+            End Using
+        End Using
+    End Function
+
+    Public Function PagarProveedorUserDao(totalCaja As Double, totalTesoro As Double, totalBanco As Double, total As Double, proveedor As String) As Boolean
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New SqlCommand()
+                command.Connection = connection
+                command.CommandText = "BEGIN Try BEGIN TRANSACTION UPDATE tesoro SET efectivo-=@tesoro WHERE sucursal=@sucu UPDATE caja SET efectivo-=@caja,total-=@caja WHERE sucursal=@sucu UPDATE proveedor SET deuda-=@tot WHERE nombre=@prove UPDATE banco SET dinero-=@banco COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+                command.Parameters.AddWithValue("@caja", totalCaja)
+                command.Parameters.AddWithValue("@tesoro", totalTesoro)
+                command.Parameters.AddWithValue("@tot", total)
+                command.Parameters.AddWithValue("@sucu", sucursalPA)
+                command.Parameters.AddWithValue("@prove", proveedor)
+                command.Parameters.AddWithValue("@banco", totalBanco)
+                command.CommandType = CommandType.Text
+                Dim rd As SqlDataReader
+                rd = command.ExecuteReader()
+                rd.Dispose()
+                Return True
+
             End Using
         End Using
     End Function
@@ -343,6 +387,23 @@ Public Class UserDao
             Using command = New SqlCommand()
                 command.Connection = connection
                 command.CommandText = "BEGIN Try BEGIN TRANSACTION INSERT INTO Cliente (nombre,Deuda) VALUES(@nombre,0) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+                command.Parameters.AddWithValue("@nombre", nombre)
+                Dim rd As SqlDataReader
+
+                rd = command.ExecuteReader()
+                rd.Dispose()
+
+                Return True
+            End Using
+        End Using
+    End Function
+
+    Public Function agregarProveedorUserDao(nombre As String) As Boolean
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New SqlCommand()
+                command.Connection = connection
+                command.CommandText = "BEGIN Try BEGIN TRANSACTION INSERT INTO Proveedor (nombre,deuda) VALUES(@nombre,0) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
                 command.Parameters.AddWithValue("@nombre", nombre)
                 Dim rd As SqlDataReader
 

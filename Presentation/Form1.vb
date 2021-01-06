@@ -145,4 +145,6 @@ Public Class FormCliente
     Private Sub DataGridViewBusqueda_CellPainting(sender As Object, e As DataGridViewCellPaintingEventArgs) Handles DataGridViewBusqueda.CellPainting
         TextCliente.Text = DataGridViewBusqueda.CurrentRow.Cells(0).Value.ToString()
     End Sub
+
+
 End Class

@@ -172,6 +172,10 @@ Public Class FormPrincipal
         AbrirFormEnPanel(Of FormCobranzas)()
     End Sub
 
+    Private Sub ButtonProveedores_Click(sender As Object, e As EventArgs) Handles ButtonProveedores.Click
+        AbrirFormEnPanel(Of FormProveedores)()
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         AbrirFormEnPanel(Of FormVentaActual)()
     End Sub

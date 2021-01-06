@@ -1,1 +1,0 @@
-Ver porque al realizar una venta no lo carga a la tabla Vende y si a la tabla Venta

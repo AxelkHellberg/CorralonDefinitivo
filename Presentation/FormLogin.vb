@@ -62,22 +62,11 @@ Public Class FormLogin
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If String.IsNullOrEmpty(TextSucursal.Text) Or String.IsNullOrEmpty(txtPass.Text) Or String.IsNullOrEmpty(txtUser.Text) Then
+        If String.IsNullOrEmpty(txtPass.Text) Or String.IsNullOrEmpty(txtUser.Text) Then
             MessageBox.Show("Debe rellenar TODOS los campos.")
             Exit Sub
         End If
-        If TextSucursal.Text = 1 Then
-            sucursalPA = "Peru"
-            sucursalAltura = "2517"
-        Else
-            If TextSucursal.Text = 2 Then
-                sucursalPA = "Arieta"
-                sucursalAltura = "3395"
-            Else
-                MessageBox.Show("Error en la sucursal.")
-                Exit Sub
-            End If
-        End If
+
         Dim userModel As New UserModel()
         Dim validLogin = userModel.Login(txtUser.Text, txtPass.Text)
         If validLogin = True Then
@@ -92,7 +81,7 @@ Public Class FormLogin
     End Sub
 
 
-    Private Sub TextSucursal_KeyDown(sender As Object, e As KeyEventArgs) Handles TextSucursal.KeyDown
+    Private Sub TextSucursal_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyData = Keys.Enter Then
             e.SuppressKeyPress = True
             Button1_Click(sender, e)

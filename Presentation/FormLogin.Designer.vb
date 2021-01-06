@@ -32,8 +32,6 @@ Partial Class FormLogin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Sucursal = New System.Windows.Forms.Label()
-        Me.TextSucursal = New System.Windows.Forms.TextBox()
         Me.TitleBar.SuspendLayout()
         CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +85,7 @@ Partial Class FormLogin
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.Label1.Location = New System.Drawing.Point(26, 163)
+        Me.Label1.Location = New System.Drawing.Point(26, 201)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 21)
         Me.Label1.TabIndex = 1
@@ -99,7 +97,7 @@ Partial Class FormLogin
         Me.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUser.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUser.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.txtUser.Location = New System.Drawing.Point(30, 187)
+        Me.txtUser.Location = New System.Drawing.Point(30, 225)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(270, 20)
         Me.txtUser.TabIndex = 2
@@ -110,7 +108,7 @@ Partial Class FormLogin
         Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPass.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.txtPass.Location = New System.Drawing.Point(30, 247)
+        Me.txtPass.Location = New System.Drawing.Point(30, 285)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(270, 20)
         Me.txtPass.TabIndex = 4
@@ -120,7 +118,7 @@ Partial Class FormLogin
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.Label2.Location = New System.Drawing.Point(26, 223)
+        Me.Label2.Location = New System.Drawing.Point(26, 261)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 21)
         Me.Label2.TabIndex = 3
@@ -150,36 +148,12 @@ Partial Class FormLogin
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
-        'Sucursal
-        '
-        Me.Sucursal.AutoSize = True
-        Me.Sucursal.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Sucursal.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.Sucursal.Location = New System.Drawing.Point(27, 277)
-        Me.Sucursal.Name = "Sucursal"
-        Me.Sucursal.Size = New System.Drawing.Size(73, 21)
-        Me.Sucursal.TabIndex = 8
-        Me.Sucursal.Text = "Sucursal"
-        '
-        'TextSucursal
-        '
-        Me.TextSucursal.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(129, Byte), Integer))
-        Me.TextSucursal.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextSucursal.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextSucursal.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.TextSucursal.Location = New System.Drawing.Point(30, 305)
-        Me.TextSucursal.Name = "TextSucursal"
-        Me.TextSucursal.Size = New System.Drawing.Size(270, 20)
-        Me.TextSucursal.TabIndex = 6
-        '
         'FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(334, 398)
-        Me.Controls.Add(Me.TextSucursal)
-        Me.Controls.Add(Me.Sucursal)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtPass)
@@ -212,6 +186,4 @@ Partial Class FormLogin
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Sucursal As Label
-    Friend WithEvents TextSucursal As TextBox
 End Class

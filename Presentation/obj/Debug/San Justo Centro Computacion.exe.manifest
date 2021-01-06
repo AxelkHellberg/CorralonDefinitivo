@@ -50,31 +50,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xn5X+Jg+Kf6mNLl7oYh0BBoNwW2oPBt/QypY6JrDHhc=</dsig:DigestValue>
+        <dsig:DigestValue>R9BLsPt31dgUqwivbeq+IMykGrKiArfk4Ek1yl4vg4g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccess.dll" size="22016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccess.dll" size="24576">
       <assemblyIdentity name="DataAccess" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kboM26mcjMVVDhsRoaaoZ/IgfJiVQW1vnMzsMgLdnsQ=</dsig:DigestValue>
+        <dsig:DigestValue>+RrnPJxVcJMQpO+EE7Lb4+TWlBZ44M68XarGuXNNAIA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Domain.dll" size="6144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Domain.dll" size="7168">
       <assemblyIdentity name="Domain" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PknGSfaKSebVg8hZGkg2FcikcoEB0gen5/YePLmgI8s=</dsig:DigestValue>
+        <dsig:DigestValue>4iNfPTg0kk3YDNO8buaTNHVlG5vuodApBxvi1z09ZaU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="San Justo Centro Computacion.exe" size="524712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="San Justo Centro Computacion.exe" size="592296">
       <assemblyIdentity name="San Justo Centro Computacion" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MEhxpcGUuDuus3zCpsoOhSuqJ5Ac9kZMovmWL+RG5g4=</dsig:DigestValue>
+        <dsig:DigestValue>KBGzVof9J2bTC2a/G10FTCwI96EDVghO1cysPTV2sLw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -147,13 +147,13 @@
       <dsig:DigestValue>gdtqNUHQABCnyWS87eSmine4QTSFSdudLFgc0RJkB5Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="San Justo Centro Computacion.exe.config" size="587">
+  <file name="San Justo Centro Computacion.exe.config" size="894">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>wPqqWSXvOUC3CTLt/fkzETQ2TjZG28HVOhL54yAjJ7A=</dsig:DigestValue>
+      <dsig:DigestValue>dS7wazMvWNPbMHYr6FPVlgzY+ZnIuHfBts0OwBWo/6E=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

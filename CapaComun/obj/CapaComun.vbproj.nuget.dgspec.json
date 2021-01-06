@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj": {}
+    "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon1\\CapaComun\\CapaComun.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj": {
+    "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon1\\CapaComun\\CapaComun.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj",
+        "projectUniqueName": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon1\\CapaComun\\CapaComun.vbproj",
         "projectName": "CapaComun",
-        "projectPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\CapaComun.vbproj",
+        "projectPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon1\\CapaComun\\CapaComun.vbproj",
         "packagesPath": "C:\\Users\\axel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon\\CapaComun\\obj\\",
+        "outputPath": "C:\\Users\\axel\\Desktop\\Proyectos\\Corralon1\\CapaComun\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
