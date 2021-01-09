@@ -89,14 +89,14 @@ Public Class FormVentaActual
                         Exit Sub
                     Else
 
-                        command.CommandText = "select codigo As Codigo,descripcion As Descripcion,stockPeru As 'Stock Peru',stockArieta As 'Stock Arieta',precio As Precio FROM Producto WHERE descripcion LIKE '%'+@desc+'%'"
+                        command.CommandText = "select codigo As Codigo,descripcion As Descripcion,stockPeru As 'Stock Peru',precio As Precio FROM Producto WHERE descripcion LIKE '%'+@desc+'%'"
                         command.Parameters.AddWithValue("@desc", TextDescripcion.Text)
                         command.CommandType = CommandType.Text
                         TextDescripcion.Clear()
                     End If
                 Else
 
-                    command.CommandText = "select codigo As Codigo,descripcion As Descripcion,stockPeru As 'Stock Peru',stockArieta As 'Stock Arieta',precio As Precio FROM Producto WHERE codigo = @cod"
+                    command.CommandText = "select codigo As Codigo,descripcion As Descripcion,stockPeru As 'Stock Peru',precio As Precio FROM Producto WHERE codigo = @cod"
                     command.Parameters.AddWithValue("@cod", TextCodigoBarra.Text)
                     command.CommandType = CommandType.Text
 
@@ -116,8 +116,7 @@ Public Class FormVentaActual
                     DataGridViewBusqueda.Columns(0).Width = 40
                     DataGridViewBusqueda.Columns(1).Width = 80
                     DataGridViewBusqueda.Columns(2).Width = 20
-                    DataGridViewBusqueda.Columns(3).Width = 20
-                    DataGridViewBusqueda.Columns(4).Width = 80
+                    DataGridViewBusqueda.Columns(3).Width = 80
 
                 Else
                     DataGridViewBusqueda.Columns.Clear()
@@ -142,7 +141,7 @@ Public Class FormVentaActual
         If String.IsNullOrEmpty(TextCodigoBarra.Text) Or String.IsNullOrEmpty(TextCant.Text) Or String.IsNullOrEmpty(TextDescripcion.Text) Then
             MessageBox.Show("Error en el relleno de campos.")
         Else
-            DataGridViewVenta.Rows.Add(TextCodigoBarra.Text.Trim(), TextDescripcion.Text.Trim(), TextCant.Text.Trim(), DataGridViewBusqueda.CurrentRow.Cells(4).Value.ToString())
+            DataGridViewVenta.Rows.Add(TextCodigoBarra.Text.Trim(), TextDescripcion.Text.Trim(), TextCant.Text.Trim(), DataGridViewBusqueda.CurrentRow.Cells(3).Value.ToString())
             DataGridViewVenta.ColumnHeadersVisible = True
             TextCodigoBarra.Clear()
             TextDescripcion.Clear()
@@ -154,7 +153,7 @@ Public Class FormVentaActual
 
     Private Sub BotonConfirmar_Click(sender As Object, e As EventArgs) Handles BotonConfirmar.Click
         Dim campo1 As String
-        Dim campo3 As String
+        Dim campo3 As Double
 
         Dim userModel As New UserModel()
         Dim valid As Boolean
@@ -196,7 +195,7 @@ Public Class FormVentaActual
 
         For i As Integer = 0 To DataGridViewVenta.Rows.Count - 1
             campo1 = DataGridViewVenta.Rows(i).Cells(0).Value.ToString
-            campo3 = DataGridViewVenta.Rows(i).Cells(2).Value.ToString
+            campo3 = DataGridViewVenta.Rows(i).Cells(2).Value
             If String.IsNullOrEmpty(TextTarjeta.Text) Then
                 TextTarjeta.Text = "0"
             End If
@@ -308,7 +307,13 @@ Public Class FormVentaActual
             Case Keys.Enter
                 BotonAgregar_Click(sender, e)
                 e.SuppressKeyPress = True
+
         End Select
+        If e.KeyCode = 190 Then
+            e.SuppressKeyPress = True
+        End If
+
+
     End Sub
 
 

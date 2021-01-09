@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+RrnPJxVcJMQpO+EE7Lb4+TWlBZ44M68XarGuXNNAIA=</dsig:DigestValue>
+        <dsig:DigestValue>INZRJpjTLvwY0v0Hknd9SSL5vRCLKa5zszSQ+VvWDP4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4iNfPTg0kk3YDNO8buaTNHVlG5vuodApBxvi1z09ZaU=</dsig:DigestValue>
+        <dsig:DigestValue>se4Kmirg65KJ23G+6GUNTWhW+u3qUtjg/QE0e0G+lbY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="San Justo Centro Computacion.exe" size="592296">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="San Justo Centro Computacion.exe" size="592808">
       <assemblyIdentity name="San Justo Centro Computacion" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KBGzVof9J2bTC2a/G10FTCwI96EDVghO1cysPTV2sLw=</dsig:DigestValue>
+        <dsig:DigestValue>VA9YDSYDNCZCs7sWMotvyy6kKW68bTZYnVNHqe55qFE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

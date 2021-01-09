@@ -127,7 +127,7 @@ Public Class FormCliente
     Private Sub DataGridViewBusqueda_KeyDown(sender As Object, e As KeyEventArgs) Handles DataGridViewBusqueda.KeyDown
         Select Case e.KeyData
             Case Keys.Enter
-                Dim frm As FormVenta = CType(Owner, FormVenta)
+                Dim frm As FormVentaActual = CType(Owner, FormVentaActual)
                 frm.ClienteAsignado.Text = DataGridViewBusqueda.CurrentRow.Cells(0).Value.ToString()
                 frm.CheckCliente.Checked = True
                 e.SuppressKeyPress = True
@@ -136,7 +136,7 @@ Public Class FormCliente
     End Sub
 
     Private Sub DataGridViewBusqueda_DoubleClick(sender As Object, e As EventArgs) Handles DataGridViewBusqueda.DoubleClick
-        Dim frm As FormVenta = CType(Owner, FormVenta)
+        Dim frm As FormVentaActual = CType(Owner, FormVentaActual)
         frm.ClienteAsignado.Text = DataGridViewBusqueda.CurrentRow.Cells(0).Value.ToString()
         frm.CheckCliente.Checked = True
         Me.Close()

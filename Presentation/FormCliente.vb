@@ -142,7 +142,7 @@ Public Class FormCobranzas
 
     Private Sub Boton3Coutas_Click(sender As Object, e As EventArgs) Handles Boton3Coutas.Click
         If Not String.IsNullOrEmpty(TextInteres.Text) Then
-            TextEfectivo.Text -= TextInteres.Text
+            ' TextEfectivo.Text -= TextInteres.Text
         End If
         If Not String.IsNullOrEmpty(TextTarjeta.Text) Then
             Dim monto As Double = TextTarjeta.Text
@@ -150,13 +150,13 @@ Public Class FormCobranzas
             interes = Convert.ToInt32(monto * 0.2)
             TextInteres.Text = interes
             TextCouta.Text = Convert.ToInt32((monto + interes) / 3)
-            TextEfectivo.Text += interes
+            '   TextEfectivo.Text += interes
         End If
     End Sub
 
     Private Sub Cuota1_Click(sender As Object, e As EventArgs) Handles Cuota1.Click
         If Not String.IsNullOrEmpty(TextInteres.Text) Then
-            TextEfectivo.Text -= TextInteres.Text
+            '    TextEfectivo.Text -= TextInteres.Text
         End If
         If Not String.IsNullOrEmpty(TextTarjeta.Text) Then
             Dim monto As Double = TextTarjeta.Text
@@ -164,13 +164,13 @@ Public Class FormCobranzas
             interes = Convert.ToInt32(monto * 0.1)
             TextInteres.Text = interes
             TextCouta.Text = Convert.ToInt32((monto + interes) / 1)
-            TextEfectivo.Text += interes
+            '      TextEfectivo.Text += interes
         End If
     End Sub
 
     Private Sub Boton6Coutas_Click(sender As Object, e As EventArgs) Handles Boton6Coutas.Click
         If Not String.IsNullOrEmpty(TextInteres.Text) Then
-            TextEfectivo.Text -= TextInteres.Text
+            '    TextEfectivo.Text -= TextInteres.Text
         End If
         If Not String.IsNullOrEmpty(TextTarjeta.Text) Then
             Dim monto As Double = TextTarjeta.Text
@@ -178,13 +178,13 @@ Public Class FormCobranzas
             interes = Convert.ToInt32(monto * 0.25)
             TextInteres.Text = interes
             TextCouta.Text = Convert.ToInt32((monto + interes) / 6)
-            TextEfectivo.Text += interes
+            '    TextEfectivo.Text += interes
         End If
     End Sub
 
     Private Sub Boton12Coutas_Click(sender As Object, e As EventArgs) Handles Boton12Coutas.Click
         If Not String.IsNullOrEmpty(TextInteres.Text) Then
-            TextEfectivo.Text -= TextInteres.Text
+            '   TextEfectivo.Text -= TextInteres.Text
         End If
         If Not String.IsNullOrEmpty(TextTarjeta.Text) Then
             Dim monto As Double = TextTarjeta.Text
@@ -192,7 +192,7 @@ Public Class FormCobranzas
             interes = Convert.ToInt32(monto * 0.3)
             TextInteres.Text = interes
             TextCouta.Text = Convert.ToInt32((monto + interes) / 12)
-            TextEfectivo.Text += interes
+            '   TextEfectivo.Text += interes
         End If
     End Sub
 

@@ -146,15 +146,15 @@ Public Class UserDao
         End Using
     End Function
 
-    Public Function VenderProductosUserDao(codigo As String, cant As Integer, vendedor As String, codVenta As Integer) As Boolean
+    Public Function VenderProductosUserDao(codigo As String, cant As Double, vendedor As String, codVenta As Integer) As Boolean
         Using connection = GetConnection()
             connection.Open()
             Using command = New SqlCommand()
                 command.Connection = connection
 
-                command.CommandText = "BEGIN Try BEGIN TRANSACTION update Producto set stockPeru-=@cant WHERE codigo=@cod insert into Vende values(@codVenta,@cod,'sin vendedor',sanjusto_sanjusto.DevolverFecha(),@cant) COMMIT TRANSACTION; End Try BEGIN Catch ROLLBACK TRANSACTION; End Catch;"
+                command.CommandText = "update Producto set stockPeru-=@cant WHERE codigo=@cod insert into Vende values(@codVenta,@cod,@vendedor,sanjusto_sanjusto.DevolverFecha(),@cant)"
 
-
+                command.Parameters.AddWithValue("@vendedor", vendedor)
                 command.Parameters.AddWithValue("@cod", codigo)
                 command.Parameters.AddWithValue("@cant", cant)
                 command.Parameters.AddWithValue("@codVenta", codVenta)

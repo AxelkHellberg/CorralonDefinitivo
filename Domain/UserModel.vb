@@ -28,7 +28,7 @@ Public Class UserModel
 
 
 
-    Public Function VenderProductos(codigo As String, cant As Integer, vendedor As String, codVenta As Integer) As Boolean
+    Public Function VenderProductos(codigo As String, cant As Double, vendedor As String, codVenta As Integer) As Boolean
         Return userDao.VenderProductosUserDao(codigo, cant, vendedor, codVenta)
     End Function
     Public Function InsertarEnConfirmar(total As Single, ajuste As Single, efectivo As Single, tarjeta As Single, interes As Single) As Integer
