@@ -174,6 +174,30 @@ Public Class UserDao
         End Using
     End Function
 
+    Public Function VenderProductosAcopioUserDao(codigo As String, cant As Double, vendedor As String, codVenta As Integer, codCli As String) As Boolean
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New SqlCommand()
+                command.Connection = connection
+
+                command.CommandText = "update Producto set acopio+=@cant WHERE codigo=@cod insert into Vende values(@codVenta,@cod,@vendedor,sanjusto_sanjusto.DevolverFecha(),@cant) INSERT INTO Acopio values(@codCliente,@cod,@cant)"
+
+                command.Parameters.AddWithValue("@vendedor", vendedor)
+                command.Parameters.AddWithValue("@codCliente", codCli)
+                command.Parameters.AddWithValue("@cod", codigo)
+                command.Parameters.AddWithValue("@cant", cant)
+                command.Parameters.AddWithValue("@codVenta", codVenta)
+                command.CommandType = CommandType.Text
+                Dim rd As SqlDataReader
+                rd = command.ExecuteReader()
+                rd.Dispose()
+
+                Return True
+
+            End Using
+        End Using
+    End Function
+
     Public Function InsertarEnConfirmarUserDao(total As Single, ajuste As Single, efectivo As Single, tarjeta As Single, interes As Single) As Integer
         Using connection = GetConnection()
             connection.Open()
@@ -199,6 +223,7 @@ Public Class UserDao
             End Using
         End Using
     End Function
+
     Public Function cargarEnCajaUserDao(total As Single, efectivo As Single, tarjeta As Single, codVenta As Integer) As Boolean
         Using connection = GetConnection()
             connection.Open()

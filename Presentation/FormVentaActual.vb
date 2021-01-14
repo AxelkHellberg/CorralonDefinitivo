@@ -89,14 +89,14 @@ Public Class FormVentaActual
                         Exit Sub
                     Else
 
-                        command.CommandText = "select codigo As Codigo,descripcion As Descripcion,stockPeru As 'Stock Peru',precio As Precio FROM Producto WHERE descripcion LIKE '%'+@desc+'%'"
+                        command.CommandText = "select codigo As Codigo,descripcion As Descripcion,stockPeru As 'Stock',acopio as Acopio,precio As Precio FROM Producto WHERE descripcion LIKE '%'+@desc+'%'"
                         command.Parameters.AddWithValue("@desc", TextDescripcion.Text)
                         command.CommandType = CommandType.Text
                         TextDescripcion.Clear()
                     End If
                 Else
 
-                    command.CommandText = "select codigo As Codigo,descripcion As Descripcion,stockPeru As 'Stock Peru',precio As Precio FROM Producto WHERE codigo = @cod"
+                    command.CommandText = "select codigo As Codigo,descripcion As Descripcion,stockPeru As 'Stock',acopio as Acopio,precio As Precio FROM Producto WHERE codigo = @cod"
                     command.Parameters.AddWithValue("@cod", TextCodigoBarra.Text)
                     command.CommandType = CommandType.Text
 
@@ -113,10 +113,12 @@ Public Class FormVentaActual
                     DataGridViewBusqueda.DataSource = db
                     da2.Dispose()
                     DataGridViewBusqueda.BeginEdit(False)
-                    DataGridViewBusqueda.Columns(0).Width = 40
+                    DataGridViewBusqueda.Columns(0).Width = 20
                     DataGridViewBusqueda.Columns(1).Width = 80
-                    DataGridViewBusqueda.Columns(2).Width = 20
-                    DataGridViewBusqueda.Columns(3).Width = 80
+                    DataGridViewBusqueda.Columns(2).Width = 10
+                    DataGridViewBusqueda.Columns(3).Width = 10
+                    DataGridViewBusqueda.Columns(4).Width = 80
+                    '    DataGridViewBusqueda.Columns(3).Width = 80
 
                 Else
                     DataGridViewBusqueda.Columns.Clear()
@@ -141,7 +143,7 @@ Public Class FormVentaActual
         If String.IsNullOrEmpty(TextCodigoBarra.Text) Or String.IsNullOrEmpty(TextCant.Text) Or String.IsNullOrEmpty(TextDescripcion.Text) Then
             MessageBox.Show("Error en el relleno de campos.")
         Else
-            DataGridViewVenta.Rows.Add(TextCodigoBarra.Text.Trim(), TextDescripcion.Text.Trim(), TextCant.Text.Trim(), DataGridViewBusqueda.CurrentRow.Cells(3).Value.ToString())
+            DataGridViewVenta.Rows.Add(TextCodigoBarra.Text.Trim(), TextDescripcion.Text.Trim(), TextCant.Text.Trim(), DataGridViewBusqueda.CurrentRow.Cells(4).Value.ToString())
             DataGridViewVenta.ColumnHeadersVisible = True
             TextCodigoBarra.Clear()
             TextDescripcion.Clear()
@@ -160,6 +162,7 @@ Public Class FormVentaActual
 
         Dim tarjeta As Double
         Dim codVenta As Integer
+        Dim codCliente As Integer
         Dim ajuste As Double
         Dim debito As Double
         If Not String.IsNullOrEmpty(TextTarjeta.Text) Then
@@ -188,9 +191,13 @@ Public Class FormVentaActual
             'Si la venta es a un consumidor final . . .
             codVenta = userModel.InsertarEnConfirmar(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes)
         Else
-            'Si la venta es a un cliente en particular . . .
-            codVenta = userModel.descontarSaldoCliente(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes, ClienteAsignado.Text)
-            CheckCliente.Checked = False
+            'Si la venta es a un cliente en particular . . . puede ser acopio o deuda . . .
+            If CheckBoxAcopio.Checked = True Then
+                codVenta = userModel.InsertarEnConfirmar(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes)
+            Else
+                codVenta = userModel.descontarSaldoCliente(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes, ClienteAsignado.Text)
+            End If
+
         End If
 
         For i As Integer = 0 To DataGridViewVenta.Rows.Count - 1
@@ -202,7 +209,12 @@ Public Class FormVentaActual
             If String.IsNullOrEmpty(TextAjuste.Text) Then
                 TextAjuste.Text = "0"
             End If
-            valid = userModel.VenderProductos(campo1, campo3, "Venta normal", codVenta)
+
+            If CheckBoxAcopio.Checked = True Then
+                valid = userModel.VenderProductosAcopio(campo1, campo3, "Venta normal", codVenta, ClienteAsignado.Text)
+            Else
+                valid = userModel.VenderProductos(campo1, campo3, "Venta normal", codVenta)
+            End If
 
             If valid = False Then
                 MessageBox.Show("Error al vender el producto" + vbNewLine + "Por favor, intente nuevamente." + vbNewLine + "o llamar a Axel")
@@ -215,6 +227,8 @@ Public Class FormVentaActual
         TextDebito.Clear()
         TextTarjeta.Clear()
         TextEfectivo.Clear()
+        CheckBoxAcopio.Checked = False
+        CheckCliente.Checked = False
         TextInteres.Clear()
         TextCodigoBarra.Focus()
         TotalNum.Text = "0.00"
@@ -694,6 +708,17 @@ Public Class FormVentaActual
             oDoc = Nothing
         End Try
 
+    End Sub
+
+    Private Sub CheckBoxAcopio_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxAcopio.CheckedChanged
+        If CheckBoxAcopio.Checked = True And ClienteAsignado.Text = "Consumidor final" Then
+            MessageBox.Show("Se debe seleccionar primero un cliente para realizar el acopio.")
+            CheckBoxAcopio.Checked = False
+        End If
+        If CheckBoxAcopio.Checked = True Then
+            TextDebito.Enabled = True
+            TextTarjeta.Enabled = True
+        End If
     End Sub
 
 

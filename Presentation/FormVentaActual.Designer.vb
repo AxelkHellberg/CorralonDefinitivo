@@ -78,6 +78,7 @@ Partial Class FormVentaActual
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.ClienteTableAdapter = New Presentation.sanjusto_centroDataSetTableAdapters.ClienteTableAdapter()
+        Me.CheckBoxAcopio = New System.Windows.Forms.CheckBox()
         Me.Total.SuspendLayout()
         CType(Me.DataGridViewVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +89,7 @@ Partial Class FormVentaActual
         'Total
         '
         Me.Total.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Total.Controls.Add(Me.CheckBoxAcopio)
         Me.Total.Controls.Add(Me.ClienteAsignado)
         Me.Total.Controls.Add(Me.BotonCliente)
         Me.Total.Controls.Add(Me.CheckCliente)
@@ -726,6 +728,17 @@ Partial Class FormVentaActual
         '
         Me.ClienteTableAdapter.ClearBeforeFill = True
         '
+        'CheckBoxAcopio
+        '
+        Me.CheckBoxAcopio.AutoSize = True
+        Me.CheckBoxAcopio.ForeColor = System.Drawing.Color.Snow
+        Me.CheckBoxAcopio.Location = New System.Drawing.Point(835, 321)
+        Me.CheckBoxAcopio.Name = "CheckBoxAcopio"
+        Me.CheckBoxAcopio.Size = New System.Drawing.Size(59, 17)
+        Me.CheckBoxAcopio.TabIndex = 70
+        Me.CheckBoxAcopio.Text = "Acopio"
+        Me.CheckBoxAcopio.UseVisualStyleBackColor = True
+        '
         'FormVentaActual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -794,5 +807,6 @@ Partial Class FormVentaActual
     Friend WithEvents CheckCliente As CheckBox
     Public WithEvents BotonCliente As Button
     Public WithEvents ClienteAsignado As Label
+    Friend WithEvents CheckBoxAcopio As CheckBox
 End Class
 
