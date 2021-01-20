@@ -360,8 +360,35 @@ Public Class FormCompra
     End Function
 
     Private Sub FormCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'Sanjusto_corralonDataSet.Proveedor' Puede moverla o quitarla según sea necesario.
-        Me.ProveedorTableAdapter.Fill(Me.Sanjusto_corralonDataSet.Proveedor)
+        Dim userModel As New UserModel()
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New SqlCommand()
+                command.Connection = connection
+
+                command.CommandText = "select nombre FROM Proveedor"
+
+                command.CommandType = CommandType.Text
+
+                Dim da2 As New SqlDataAdapter(command)
+                Dim tabla As New DataTable
+
+                If da2.Fill(tabla) <> 0 Then
+
+                    ComboBoxProveedores.DataSource = tabla
+                    ComboBoxProveedores.DisplayMember = "nombre"
+                    ComboBoxProveedores.ValueMember = "nombre"
+                    ComboBoxProveedores.Text = "(seleccionar proveedor)"
+
+                Else
+                    da2.Dispose()
+                End If
+
+                DataGridViewBusqueda.Focus()
+
+            End Using
+        End Using
+
 
     End Sub
 

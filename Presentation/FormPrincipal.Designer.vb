@@ -30,6 +30,7 @@ Partial Class FormPrincipal
         Me.TextoSucursal = New System.Windows.Forms.Label()
         Me.TextoPrincipal = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.ButtonProveedores = New System.Windows.Forms.Button()
         Me.BotonCobranzas = New System.Windows.Forms.Button()
         Me.BotonAnalisis = New System.Windows.Forms.Button()
@@ -77,6 +78,7 @@ Partial Class FormPrincipal
         'PanelMenu
         '
         Me.PanelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(6, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.PanelMenu.Controls.Add(Me.Button2)
         Me.PanelMenu.Controls.Add(Me.ButtonProveedores)
         Me.PanelMenu.Controls.Add(Me.BotonCobranzas)
         Me.PanelMenu.Controls.Add(Me.BotonAnalisis)
@@ -149,6 +151,24 @@ Partial Class FormPrincipal
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
+        'Button2
+        '
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Image = Global.Presentation.My.Resources.Resources.user
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(0, 45)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(131, 45)
+        Me.Button2.TabIndex = 7
+        Me.Button2.Text = "    Acopio"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'ButtonProveedores
         '
         Me.ButtonProveedores.FlatAppearance.BorderSize = 0
@@ -159,7 +179,7 @@ Partial Class FormPrincipal
         Me.ButtonProveedores.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ButtonProveedores.Image = Global.Presentation.My.Resources.Resources.patient__1_1
         Me.ButtonProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonProveedores.Location = New System.Drawing.Point(-3, 42)
+        Me.ButtonProveedores.Location = New System.Drawing.Point(-3, 88)
         Me.ButtonProveedores.Name = "ButtonProveedores"
         Me.ButtonProveedores.Size = New System.Drawing.Size(131, 45)
         Me.ButtonProveedores.TabIndex = 6
@@ -177,7 +197,7 @@ Partial Class FormPrincipal
         Me.BotonCobranzas.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BotonCobranzas.Image = Global.Presentation.My.Resources.Resources.seo11
         Me.BotonCobranzas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonCobranzas.Location = New System.Drawing.Point(3, 295)
+        Me.BotonCobranzas.Location = New System.Drawing.Point(3, 341)
         Me.BotonCobranzas.Name = "BotonCobranzas"
         Me.BotonCobranzas.Size = New System.Drawing.Size(131, 45)
         Me.BotonCobranzas.TabIndex = 5
@@ -195,7 +215,7 @@ Partial Class FormPrincipal
         Me.BotonAnalisis.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BotonAnalisis.Image = Global.Presentation.My.Resources.Resources.calendar__1_1
         Me.BotonAnalisis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonAnalisis.Location = New System.Drawing.Point(3, 244)
+        Me.BotonAnalisis.Location = New System.Drawing.Point(3, 290)
         Me.BotonAnalisis.Name = "BotonAnalisis"
         Me.BotonAnalisis.Size = New System.Drawing.Size(131, 45)
         Me.BotonAnalisis.TabIndex = 4
@@ -213,7 +233,7 @@ Partial Class FormPrincipal
         Me.BotonTesoro.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BotonTesoro.Image = Global.Presentation.My.Resources.Resources.bar_graph1
         Me.BotonTesoro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonTesoro.Location = New System.Drawing.Point(0, 193)
+        Me.BotonTesoro.Location = New System.Drawing.Point(0, 239)
         Me.BotonTesoro.Name = "BotonTesoro"
         Me.BotonTesoro.Size = New System.Drawing.Size(131, 45)
         Me.BotonTesoro.TabIndex = 3
@@ -231,7 +251,7 @@ Partial Class FormPrincipal
         Me.BotonCaja.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BotonCaja.Image = Global.Presentation.My.Resources.Resources.phone_book__1_1
         Me.BotonCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonCaja.Location = New System.Drawing.Point(0, 91)
+        Me.BotonCaja.Location = New System.Drawing.Point(0, 137)
         Me.BotonCaja.Name = "BotonCaja"
         Me.BotonCaja.Size = New System.Drawing.Size(131, 45)
         Me.BotonCaja.TabIndex = 2
@@ -249,7 +269,7 @@ Partial Class FormPrincipal
         Me.BotonCompra.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BotonCompra.Image = Global.Presentation.My.Resources.Resources.person_settings1
         Me.BotonCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BotonCompra.Location = New System.Drawing.Point(3, 142)
+        Me.BotonCompra.Location = New System.Drawing.Point(3, 188)
         Me.BotonCompra.Name = "BotonCompra"
         Me.BotonCompra.Size = New System.Drawing.Size(131, 45)
         Me.BotonCompra.TabIndex = 1
@@ -369,4 +389,5 @@ Partial Class FormPrincipal
     Public WithEvents BotonAnalisis As Button
     Public WithEvents BotonCobranzas As Button
     Public WithEvents ButtonProveedores As Button
+    Public WithEvents Button2 As Button
 End Class

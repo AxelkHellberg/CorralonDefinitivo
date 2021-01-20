@@ -31,6 +31,7 @@ Partial Class FormVentaActual
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Total = New System.Windows.Forms.Panel()
+        Me.CheckBoxAcopio = New System.Windows.Forms.CheckBox()
         Me.ClienteAsignado = New System.Windows.Forms.Label()
         Me.BotonCliente = New System.Windows.Forms.Button()
         Me.CheckCliente = New System.Windows.Forms.CheckBox()
@@ -78,7 +79,6 @@ Partial Class FormVentaActual
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.ClienteTableAdapter = New Presentation.sanjusto_centroDataSetTableAdapters.ClienteTableAdapter()
-        Me.CheckBoxAcopio = New System.Windows.Forms.CheckBox()
         Me.Total.SuspendLayout()
         CType(Me.DataGridViewVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,6 +133,17 @@ Partial Class FormVentaActual
         Me.Total.Name = "Total"
         Me.Total.Size = New System.Drawing.Size(932, 628)
         Me.Total.TabIndex = 0
+        '
+        'CheckBoxAcopio
+        '
+        Me.CheckBoxAcopio.AutoSize = True
+        Me.CheckBoxAcopio.ForeColor = System.Drawing.Color.Snow
+        Me.CheckBoxAcopio.Location = New System.Drawing.Point(835, 321)
+        Me.CheckBoxAcopio.Name = "CheckBoxAcopio"
+        Me.CheckBoxAcopio.Size = New System.Drawing.Size(59, 17)
+        Me.CheckBoxAcopio.TabIndex = 70
+        Me.CheckBoxAcopio.Text = "Acopio"
+        Me.CheckBoxAcopio.UseVisualStyleBackColor = True
         '
         'ClienteAsignado
         '
@@ -727,17 +738,6 @@ Partial Class FormVentaActual
         'ClienteTableAdapter
         '
         Me.ClienteTableAdapter.ClearBeforeFill = True
-        '
-        'CheckBoxAcopio
-        '
-        Me.CheckBoxAcopio.AutoSize = True
-        Me.CheckBoxAcopio.ForeColor = System.Drawing.Color.Snow
-        Me.CheckBoxAcopio.Location = New System.Drawing.Point(835, 321)
-        Me.CheckBoxAcopio.Name = "CheckBoxAcopio"
-        Me.CheckBoxAcopio.Size = New System.Drawing.Size(59, 17)
-        Me.CheckBoxAcopio.TabIndex = 70
-        Me.CheckBoxAcopio.Text = "Acopio"
-        Me.CheckBoxAcopio.UseVisualStyleBackColor = True
         '
         'FormVentaActual
         '

@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccess.dll" size="25600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccess.dll" size="29184">
       <assemblyIdentity name="DataAccess" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UMtC+t3msMvyHFM6GDxigtBL3HRYx52FXbXgvHQv9OA=</dsig:DigestValue>
+        <dsig:DigestValue>YA0OVsmvif7jfLYskJRkBMmErgWKoHtpyVAbwVszI5M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vOALDJZGaTMkIPi1rgh1cROtCpEGHDEZfTiFf0aemZc=</dsig:DigestValue>
+        <dsig:DigestValue>6yyS3ab2mQt7Y2SHBsXUTbJjAWeba+bc1WWUsgaoUEQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="San Justo Centro Computacion.exe" size="593832">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="San Justo Centro Computacion.exe" size="639912">
       <assemblyIdentity name="San Justo Centro Computacion" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nWpTEOuwEsGWPOyVD66ZKVxTyIT0enhgXFevGpAq/L0=</dsig:DigestValue>
+        <dsig:DigestValue>6PglcNaKAKGb+rZN4uNJFnKIE7OLs09L4xbjjWSaEew=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

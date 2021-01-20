@@ -197,6 +197,11 @@ San Justo Centro Computacion
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Presentation.My.Resources.Resources.user">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Presentation.My.Resources.Resources.user__1_">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -463,6 +468,136 @@ Update Order Option
 </summary>
 </member>
 <member name="T:Presentation.sanjusto_corralonDataSet2TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSet3">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSet3.ProveedorDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSet3.ProveedorRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSet3.ProveedorRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSet3TableAdapters.ProveedorTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSet3TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSet3TableAdapters.TableAdapterManager.UpdateUpdatedRows(Presentation.sanjusto_corralonDataSet3,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSet3TableAdapters.TableAdapterManager.UpdateInsertedRows(Presentation.sanjusto_corralonDataSet3,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSet3TableAdapters.TableAdapterManager.UpdateDeletedRows(Presentation.sanjusto_corralonDataSet3,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSet3TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSet3TableAdapters.TableAdapterManager.UpdateAll(Presentation.sanjusto_corralonDataSet3)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSet3TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSetProveedor">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSetProveedor.ProveedorDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSetProveedor.ProveedorRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSetProveedor.ProveedorRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.ProveedorTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.TableAdapterManager.UpdateUpdatedRows(Presentation.sanjusto_corralonDataSetProveedor,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.TableAdapterManager.UpdateInsertedRows(Presentation.sanjusto_corralonDataSetProveedor,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.TableAdapterManager.UpdateDeletedRows(Presentation.sanjusto_corralonDataSetProveedor,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.TableAdapterManager.UpdateAll(Presentation.sanjusto_corralonDataSetProveedor)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Presentation.sanjusto_corralonDataSetProveedorTableAdapters.TableAdapterManager.SelfReferenceComparer">
 <summary>
 Used to sort self-referenced table's rows
 </summary>

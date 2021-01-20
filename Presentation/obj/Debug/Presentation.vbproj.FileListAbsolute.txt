@@ -118,3 +118,4 @@ C:\Users\axel\Desktop\Proyectos\Corralon1\Presentation\obj\Debug\San Justo Centr
 C:\Users\axel\Desktop\Proyectos\Corralon1\Presentation\obj\Debug\San Justo Centro Computacion.xml
 C:\Users\axel\Desktop\Proyectos\Corralon1\Presentation\obj\Debug\San Justo Centro Computacion.pdb
 C:\Users\axel\Desktop\Proyectos\Corralon1\Presentation\obj\Debug\Presentation.FormProveedores.resources
+C:\Users\axel\Desktop\Proyectos\Corralon1\Presentation\obj\Debug\Presentation.FormAcopio.resources

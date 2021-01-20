@@ -117,8 +117,13 @@ Public Class FormCliente
     Private Sub BotonAgregarCliente_Click(sender As Object, e As EventArgs) Handles BotonAgregarCliente.Click
         Dim userModel As New UserModel()
         Try
-            Dim valid = userModel.agregarCliente(TextCliente.Text)
-            BotonBuscar_Click(sender, e)
+            If String.IsNullOrEmpty(TextCliente.Text) Then
+                MessageBox.Show("Debe rellenar el campo 'Cliente'")
+                Exit Sub
+            Else
+                Dim valid = userModel.agregarCliente(TextCliente.Text)
+                BotonBuscar_Click(sender, e)
+            End If
         Catch ex As Exception
             MessageBox.Show("Error no puede existir dos clientes con el mismo nombre.")
         End Try

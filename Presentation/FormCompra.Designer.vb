@@ -36,8 +36,6 @@ Partial Class FormCompra
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBoxProveedores = New System.Windows.Forms.ComboBox()
-        Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Sanjusto_corralonDataSet = New Presentation.sanjusto_corralonDataSet()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -51,12 +49,6 @@ Partial Class FormCompra
         Me.Busqueda = New System.Windows.Forms.Label()
         Me.DetalleCompra = New System.Windows.Forms.Label()
         Me.DataGridViewCompra = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BotonAgregar = New System.Windows.Forms.Button()
         Me.DataGridViewBusqueda = New System.Windows.Forms.DataGridView()
         Me.Porcentaje = New System.Windows.Forms.Label()
@@ -76,15 +68,28 @@ Partial Class FormCompra
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.tabla = New System.Data.DataTable()
-        Me.ProveedorTableAdapter = New Presentation.sanjusto_corralonDataSetTableAdapters.ProveedorTableAdapter()
+        Me.Sanjusto_corralonDataSet3 = New Presentation.sanjusto_corralonDataSet3()
+        Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProveedorTableAdapter = New Presentation.sanjusto_corralonDataSet3TableAdapters.ProveedorTableAdapter()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Sanjusto_corralonDataSetProveedor = New Presentation.sanjusto_corralonDataSetProveedor()
+        Me.ProveedorBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProveedorTableAdapter1 = New Presentation.sanjusto_corralonDataSetProveedorTableAdapters.ProveedorTableAdapter()
         Me.panelContenedor.SuspendLayout()
-        CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Sanjusto_corralonDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridViewBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBarraTitulo.SuspendLayout()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Sanjusto_corralonDataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Sanjusto_corralonDataSetProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProveedorBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelContenedor
@@ -162,24 +167,12 @@ Partial Class FormCompra
         'ComboBoxProveedores
         '
         Me.ComboBoxProveedores.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "nombre", True))
-        Me.ComboBoxProveedores.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.ProveedorBindingSource, "nombre", True))
-        Me.ComboBoxProveedores.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.ProveedorBindingSource, "nombre", True))
         Me.ComboBoxProveedores.FormattingEnabled = True
         Me.ComboBoxProveedores.Location = New System.Drawing.Point(443, 449)
         Me.ComboBoxProveedores.Name = "ComboBoxProveedores"
         Me.ComboBoxProveedores.Size = New System.Drawing.Size(136, 21)
         Me.ComboBoxProveedores.TabIndex = 51
         Me.ComboBoxProveedores.Text = "(seleccionar proveedor)"
-        '
-        'ProveedorBindingSource
-        '
-        Me.ProveedorBindingSource.DataMember = "Proveedor"
-        Me.ProveedorBindingSource.DataSource = Me.Sanjusto_corralonDataSet
-        '
-        'Sanjusto_corralonDataSet
-        '
-        Me.Sanjusto_corralonDataSet.DataSetName = "sanjusto_corralonDataSet"
-        Me.Sanjusto_corralonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label5
         '
@@ -311,7 +304,7 @@ Partial Class FormCompra
         Me.DetalleCompra.AutoSize = True
         Me.DetalleCompra.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DetalleCompra.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.DetalleCompra.Location = New System.Drawing.Point(299, 261)
+        Me.DetalleCompra.Location = New System.Drawing.Point(288, 261)
         Me.DetalleCompra.Name = "DetalleCompra"
         Me.DetalleCompra.Size = New System.Drawing.Size(208, 24)
         Me.DetalleCompra.TabIndex = 29
@@ -374,36 +367,6 @@ Partial Class FormCompra
         Me.DataGridViewCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewCompra.Size = New System.Drawing.Size(705, 132)
         Me.DataGridViewCompra.TabIndex = 28
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Codigo"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Descripcion"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "CantPeru"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Costo"
-        Me.Column4.Name = "Column4"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Porcentaje"
-        Me.Column6.Name = "Column6"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Precio"
-        Me.Column5.Name = "Column5"
         '
         'BotonAgregar
         '
@@ -640,9 +603,63 @@ Partial Class FormCompra
         Me.btnClose.TabIndex = 3
         Me.btnClose.TabStop = False
         '
+        'Sanjusto_corralonDataSet3
+        '
+        Me.Sanjusto_corralonDataSet3.DataSetName = "sanjusto_corralonDataSet3"
+        Me.Sanjusto_corralonDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProveedorBindingSource
+        '
+        Me.ProveedorBindingSource.DataMember = "Proveedor"
+        Me.ProveedorBindingSource.DataSource = Me.Sanjusto_corralonDataSet3
+        '
         'ProveedorTableAdapter
         '
         Me.ProveedorTableAdapter.ClearBeforeFill = True
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Codigo"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Descripcion"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Cant"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Costo"
+        Me.Column4.Name = "Column4"
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Porcentaje"
+        Me.Column6.Name = "Column6"
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Precio"
+        Me.Column5.Name = "Column5"
+        '
+        'Sanjusto_corralonDataSetProveedor
+        '
+        Me.Sanjusto_corralonDataSetProveedor.DataSetName = "sanjusto_corralonDataSetProveedor"
+        Me.Sanjusto_corralonDataSetProveedor.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProveedorBindingSource1
+        '
+        Me.ProveedorBindingSource1.DataMember = "Proveedor"
+        Me.ProveedorBindingSource1.DataSource = Me.Sanjusto_corralonDataSetProveedor
+        '
+        'ProveedorTableAdapter1
+        '
+        Me.ProveedorTableAdapter1.ClearBeforeFill = True
         '
         'FormCompra
         '
@@ -658,14 +675,16 @@ Partial Class FormCompra
         Me.Text = "Form2"
         Me.panelContenedor.ResumeLayout(False)
         Me.panelContenedor.PerformLayout()
-        CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Sanjusto_corralonDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewCompra, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridViewBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBarraTitulo.ResumeLayout(False)
         Me.PanelBarraTitulo.PerformLayout()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Sanjusto_corralonDataSet3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Sanjusto_corralonDataSetProveedor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProveedorBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -702,12 +721,6 @@ Partial Class FormCompra
     Friend WithEvents Label3 As Label
     Friend WithEvents TotalNum As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Label2 As Label
     Friend WithEvents TextDeuda As TextBox
     Friend WithEvents TextTesoro As TextBox
@@ -716,9 +729,18 @@ Partial Class FormCompra
     Friend WithEvents Label4 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents ComboBoxProveedores As ComboBox
-    Friend WithEvents Sanjusto_corralonDataSet As sanjusto_corralonDataSet
-    Friend WithEvents ProveedorBindingSource As BindingSource
-    Friend WithEvents ProveedorTableAdapter As sanjusto_corralonDataSetTableAdapters.ProveedorTableAdapter
     Friend WithEvents TextBanco As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents Sanjusto_corralonDataSet3 As sanjusto_corralonDataSet3
+    Friend WithEvents ProveedorBindingSource As BindingSource
+    Friend WithEvents ProveedorTableAdapter As sanjusto_corralonDataSet3TableAdapters.ProveedorTableAdapter
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Sanjusto_corralonDataSetProveedor As sanjusto_corralonDataSetProveedor
+    Friend WithEvents ProveedorBindingSource1 As BindingSource
+    Friend WithEvents ProveedorTableAdapter1 As sanjusto_corralonDataSetProveedorTableAdapters.ProveedorTableAdapter
 End Class

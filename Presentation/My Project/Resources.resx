@@ -127,8 +127,11 @@
   <data name="695664d2490fd207af48a719d4fc3df3-icono-de-la-computadora-de-escritorio-by-vexels" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\695664d2490fd207af48a719d4fc3df3-icono-de-la-computadora-de-escritorio-by-vexels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phone-book (1)11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phone-book (1)11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="patient (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\patient (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blue_upgrade_recyclearrows_arrow_azul_12426" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue_upgrade_recyclearrows_arrow_azul_12426.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="free-website-icon-171" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-website-icon-171.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,20 +172,20 @@
   <data name="bluefilefolder_azul_archivo_12582 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bluefilefolder_azul_archivo_12582 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="magnifying-glass-156474_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\magnifying-glass-156474_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bluefilefolder_azul_archivo_12582 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bluefilefolder_azul_archivo_12582 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tesoro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tesoro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="seo11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seo11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="x-close-icon-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-close-icon-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bluefilefolder_azul_archivo_12582" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bluefilefolder_azul_archivo_12582.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="payment1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\payment1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,8 +193,8 @@
   <data name="magnifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnifier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bluefilefolder_azul_archivo_12582" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bluefilefolder_azul_archivo_12582.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phone-book (1)11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone-book (1)11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bar-graph1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bar-graph1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,8 +208,8 @@
   <data name="Material_icons-01-08-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Material_icons-01-08-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blue_upgrade_recyclearrows_arrow_azul_12426" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blue_upgrade_recyclearrows_arrow_azul_12426.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="magnifying-glass-156474_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magnifying-glass-156474_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Refresh-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Refresh-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +220,8 @@
   <data name="application_office_excel_2474" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application_office_excel_2474.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="seo11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\seo11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tesoro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tesoro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendar (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,7 +229,7 @@
   <data name="logout (1)11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout (1)11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="patient (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\patient (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

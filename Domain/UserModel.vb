@@ -28,14 +28,19 @@ Public Class UserModel
 
 
 
+    Public Function BajarProductosDeStockAndAcopio(codigo As String, cant As Double, cliente As String) As Boolean
+        Return userDao.BajarProductosDeStockAndAcopioUserDao(codigo, cant, cliente)
+    End Function
+
     Public Function VenderProductos(codigo As String, cant As Double, vendedor As String, codVenta As Integer) As Boolean
         Return userDao.VenderProductosUserDao(codigo, cant, vendedor, codVenta)
     End Function
+
     Public Function VenderProductosAcopio(codigo As String, cant As Double, vendedor As String, codVenta As Integer, codCli As String) As Boolean
         Return userDao.VenderProductosAcopioUserDao(codigo, cant, vendedor, codVenta, codCli)
     End Function
-    Public Function InsertarEnConfirmar(total As Single, ajuste As Single, efectivo As Single, tarjeta As Single, interes As Single) As Integer
-        Return userDao.InsertarEnConfirmarUserDao(total, ajuste, efectivo, tarjeta, interes)
+    Public Function InsertarEnConfirmar(total As Single, ajuste As Single, efectivo As Single, tarjeta As Single, interes As Single, cliente As String) As Integer
+        Return userDao.InsertarEnConfirmarUserDao(total, ajuste, efectivo, tarjeta, interes, cliente)
     End Function
 
     Public Function cargarEnCaja(total As Single, efectivo As Single, tarjeta As Single, codVenta As Integer) As Boolean

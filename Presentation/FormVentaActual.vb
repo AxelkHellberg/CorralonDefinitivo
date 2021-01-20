@@ -162,7 +162,7 @@ Public Class FormVentaActual
 
         Dim tarjeta As Double
         Dim codVenta As Integer
-        Dim codCliente As Integer
+
         Dim ajuste As Double
         Dim debito As Double
         If Not String.IsNullOrEmpty(TextTarjeta.Text) Then
@@ -189,11 +189,11 @@ Public Class FormVentaActual
 
         If CheckCliente.Checked = False Then
             'Si la venta es a un consumidor final . . .
-            codVenta = userModel.InsertarEnConfirmar(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes)
+            codVenta = userModel.InsertarEnConfirmar(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes, ClienteAsignado.Text)
         Else
             'Si la venta es a un cliente en particular . . . puede ser acopio o deuda . . .
             If CheckBoxAcopio.Checked = True Then
-                codVenta = userModel.InsertarEnConfirmar(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes)
+                codVenta = userModel.InsertarEnConfirmar(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes, ClienteAsignado.Text)
             Else
                 codVenta = userModel.descontarSaldoCliente(TotalNum.Text, ajuste, TextEfectivo.Text, tarjeta + debito, interes, ClienteAsignado.Text)
             End If
